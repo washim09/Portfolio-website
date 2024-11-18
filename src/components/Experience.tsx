@@ -15,7 +15,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ startDate, endDate, com
 
   return (
     <div 
-      className="relative pl-6 pb-8 border-l border-[#FF6F61] last:border-b-0 last:pb-0"
+      className="relative pl-6 pb-8 border-l border-[#FF6F61] "
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -44,36 +44,44 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ startDate, endDate, com
 const Experience = () => {
   const experienceData = [
     {
-      startDate: "01-Jan-2020",
-      endDate: "31-Dec-2050",
-      company: "Codex Solution",
-      location: "San Francisco, CA",
-      position: "Project Manager",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      startDate: "Jan-2022",
+      endDate: "Jan-2024",
+      company: "Nexcuit Web Solution",
+      location: "New Delhi, India",
+      position: "Frontend Developer",
+      description: "Designed responsive web interfaces focused on performance. Used HTML5, CSS, and JavaScript for scalable front-end solutions."
     },
     {
-      startDate: "01-Jan-2020",
-      endDate: "31-Dec-2050",
-      company: "Soft Solution Ltd",
-      location: "San Francisco, CA",
+      startDate: "May-2021",
+      endDate: "Nov-2021",
+      company: "LDT Technology Pvt Ltd",
+      location: "Zirakpur, Punjab, India",
+      position: "Software Developer",
+      description: "Built and maintained back-end systems for optimal performance. Worked cross-functionally to enhance software features."
+    },
+    {
+      startDate: "Sep-2019",
+      endDate: "Apr-2021",
+      company: "Echrontech Technology",
+      location: "New Delhi, Delhi, India",
       position: "Web Developer",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      description: "Developed full-stack web apps, integrating PHP back-end with user-friendly front-end. Supported team success with agile practices and problem-solving."
     },
     {
-      startDate: "01-Jan-2020",
-      endDate: "31-Dec-2050",
-      company: "ABC Soft Ltd",
-      location: "San Francisco, CA",
-      position: "Web Designer",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      startDate: "Jan-2018",
+      endDate: "Aug-2019",
+      company: "Acnosoft Technology",
+      location: "North West Delhi, Delhi, India",
+      position: "Seo Executive",
+      description: "Applied SEO strategies to increase web traffic and search rankings. Optimized content and improved sites using HTML/CSS."
     },
     {
-      startDate: "01-Jan-2020",
-      endDate: "31-Dec-2050",
-      company: "Soft Agency",
-      location: "San Francisco, CA",
-      position: "Graphic Designer",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      startDate: "Jan-2014",
+      endDate: "Dec-2017",
+      company: "Agarwal Packers and Movers Pvt Ltd",
+      location: "Pitampura, Delhi, India",
+      position: "Customer Service Representative",
+      description: "Provided top-notch customer service by managing client inquiries and coordinating logistics. Streamlined communication to boost customer satisfaction."
     }
   ];
 

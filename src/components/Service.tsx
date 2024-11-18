@@ -16,22 +16,22 @@ const Service = () => {
     {
       Icon: FiMonitor,
       title: "Web Design",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      description: "Designs engaging and user-centric web interfaces that balance aesthetics with functionality to provide an optimal user experience."
     },
     {
       Icon: Laptop,
       title: "Web Development",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      description: "Builds robust and scalable web applications using modern front-end and back-end technologies, ensuring seamless performance."
     },
     {
       Icon: Search,
       title: "SEO",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      description: "Implements effective SEO strategies to enhance website visibility, drive traffic, and improve search engine rankings."
     },
     {
       Icon: Mail,
       title: "Digital Marketing",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      description: "Executes comprehensive digital marketing plans, combining SEO, content creation, and targeted campaigns to boost online presence."
     }
   ];
 

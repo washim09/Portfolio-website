@@ -3,7 +3,7 @@ import { useState } from 'react';
 type EducationItemProps = {
   startDate: string;
   endDate: string;
-  degree: string;
+  degree: React.ReactNode;
   description: string;
   index: number;
 };
@@ -40,28 +40,36 @@ const EducationItem: React.FC<EducationItemProps> = ({ startDate, endDate, degre
 const Education = () => {
   const educationData = [
     {
-      startDate: "01-Jan-2020",
-      endDate: "31-Dec-2050",
-      degree: "Master Degree",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      startDate: "Aug-2019",
+      endDate: "Jan-2020",
+      degree: "Certification Course",
+      description: "Web Development From AIDM institute."
     },
     {
-      startDate: "01-Jan-2020",
-      endDate: "31-Dec-2050",
+      startDate: "Aug-2014",
+      endDate: "Dec-2017",
       degree: "Bachelor Degree",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      description: "Bachelor of Computer Application From Indira Gandhi National Open University."
     },
     {
-      startDate: "01-Jan-2020",
-      endDate: "31-Dec-2050",
-      degree: "Associate Degree",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      startDate: "Jun-2008",
+      endDate: "Jun-2010",
+      degree: (
+        <>
+          High School (<span>12<sup>th</sup> Grade</span>)
+        </>
+      ),
+      description: "CBSE"
     },
     {
-      startDate: "01-Jan-2020",
-      endDate: "31-Dec-2050",
-      degree: "High School",
-      description: "Lorem ipsum dolor sit amet elit suscipit orci. Donec molestie velit id libero."
+      startDate: "Apr-2006",
+      endDate: "May-2007",
+      degree: (
+        <>
+          High School (<span>10<sup>th</sup> Grade</span>)
+        </>
+      ),
+      description: "CBSE",
     }
   ];
 

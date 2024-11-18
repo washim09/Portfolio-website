@@ -40,7 +40,7 @@ const AboutMe = () => {
           </div>
           <div className="w-3/5 mt-20">
             <p className="mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci. Donec molestie velit id libero blandit, quis suscipit urna suscipit. Donec aliquet erat eu lacinia iaculis. Ut tempor tellus eu sem pharetra feugiat.
+            I'm a full-stack developer skilled in the MERN stack, with experience building responsive and user-friendly web applications using React Vite and Tailwind CSS. I excel at creating intuitive admin dashboards, scalable backend APIs, and interactive frontends. Passionate about simplifying complex problems, I deliver high-quality solutions that drive impactful user experiences.
             </p>
             <button className="bg-[#FF6F61] text-white px-6 py-2 mb-8 hover:bg-[#222222] transition duration-300">
               Hire Me

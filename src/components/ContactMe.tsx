@@ -141,23 +141,23 @@ const ContactInfo: React.FC = () => (
     <div className="contact-info">
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <User className="w-6 h-6 mr-3 text-[#FF6F61]" />
-        Michael Miller
+        Washim Akram
       </p>
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <Tag className="w-6 h-6 mr-3 text-[#FF6F61]" />
-        Web Designer & Developer
+        Web Developer & Software Developer
       </p>
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <Mail className="w-6 h-6 mr-3 text-[#FF6F61]" />
-        <a href="mailto:info@example.com" className="text-gray-700 hover:text-[#FF6F61]">info@example.com</a>
+        <a href="mailto:akramwashim09@gmail.com" className="text-gray-700 hover:text-[#FF6F61]">akramwashim09@gmail.com</a>
       </p>
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <Phone className="w-6 h-6 mr-3 text-[#FF6F61]" />
-        <a href="tel:+1234567890" className="text-gray-700 hover:text-[#FF6F61]">+123-456-7890</a>
+        <a href="tel:+919999413369" className="text-gray-700 hover:text-[#FF6F61]">+91 9999413369</a>
       </p>
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <MapPin className="w-6 h-6 mr-3 text-[#FF6F61]" />
-        123 Street, Los Angeles, CA, USA
+        Inder Enclave Phase - 2, North west Delhi, Delhi - 110086
       </p>
     </div>
     <div className="social mt-6 space-x-2">
