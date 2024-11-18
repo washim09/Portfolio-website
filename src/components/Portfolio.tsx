@@ -10,12 +10,12 @@ interface Project {
 }
 
 const portfolioItems: Project[] = [
-  { id: 1, category: 'web-des', image: './portfolio-1.jpg', title: 'Project Name', type: 'Web Design' },
-  { id: 2, category: 'web-des', image: './portfolio-2.jpg', title: 'Project Name', type: 'Web Design' },
-  { id: 3, category: 'web-dev', image: './portfolio-3.jpg', title: 'Project Name', type: 'Web Development' },
-  { id: 4, category: 'web-dev', image: './portfolio-4.jpg', title: 'Project Name', type: 'Web Development' },
-  { id: 5, category: 'dig-mar', image: './portfolio-5.jpg', title: 'Project Name', type: 'Digital Marketing' },
-  { id: 6, category: 'dig-mar', image: './portfolio-6.jpg', title: 'Project Name', type: 'Digital Marketing' },
+  { id: 1, category: 'web-des', image: './portfolio-1.jpg', title: 'O2lenses', type: 'Web Design' },
+  { id: 2, category: 'web-des', image: './portfolio-2.jpg', title: 'Ldt Technology', type: 'Web Design' },
+  { id: 3, category: 'web-dev', image: './portfolio-3.jpg', title: 'Mapmystudy', type: 'Web Development' },
+  { id: 4, category: 'web-dev', image: './portfolio-4.jpg', title: 'Nadaku', type: 'Web Development' },
+  { id: 5, category: 'dig-mar', image: './portfolio-5.jpg', title: 'Acnosoft', type: 'Digital Marketing' },
+  { id: 6, category: 'dig-mar', image: './portfolio-6.jpg', title: 'Drapster', type: 'Digital Marketing' },
 ];
 
 const Portfolio: React.FC = () => {
@@ -72,7 +72,7 @@ const Portfolio: React.FC = () => {
                       : 'bg-white text-gray-700 border border-[#FF6F61]'
                   } rounded-md transition-colors duration-200`}
                 >
-                  {category === '*' ? 'All' : category === 'web-des' ? 'Design' : category === 'web-dev' ? 'Development' : 'Marketing'}
+                  {category === '*' ? 'All' : category === 'web-des' ? 'Design' : category === 'web-dev' ? 'Development' : 'Digital Marketing'}
                 </button>
               </li>
             ))}
@@ -103,7 +103,7 @@ const Portfolio: React.FC = () => {
                       : 'bg-white text-gray-700 border border-[#FF6F61]'
                   } rounded-md transition-colors duration-200`}
                 >
-                  {category === '*' ? 'All' : category === 'web-des' ? 'Design' : category === 'web-dev' ? 'Development' : 'Marketing'}
+                  {category === '*' ? 'All' : category === 'web-des' ? 'Design' : category === 'web-dev' ? 'Development' : 'Digital Marketing'}
                 </button>
               </li>
             ))}
@@ -133,7 +133,7 @@ const Portfolio: React.FC = () => {
                     : 'bg-white text-gray-700 border border-[#FF6F61]'
                 } rounded-md transition-colors duration-200`}
               >
-                {category === '*' ? 'All' : category === 'web-des' ? 'Design' : category === 'web-dev' ? 'Dev' : 'Marketing'}
+                {category === '*' ? 'All' : category === 'web-des' ? 'Design' : category === 'web-dev' ? 'Dev' : 'Digital Marketing'}
               </button>
             </li>
           ))}
