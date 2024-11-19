@@ -3,9 +3,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const reviews = [
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci. Donec molestie velit id libero blandit, quis suscipit urna suscipit. Donec aliquet erat eu lacinia iaculis. Ut tempor tellus eu sem pharetra feugiat.",
-    name: "Client Name",
-    profession: "Profession",
+    text: "At LDttechnology, Washim Akram impressed us with their creativity and dedication, including building our website. His ability to solve problems and deliver results was truly remarkable. His contributions made a lasting impact, and I wish them success ahead.",
+    name: "LDT Technologies Pvt. Ltd.",
+    profession: "CEO, LDT Technologies Pvt. Ltd.",
     image: "./review-1.jpg"
   },
   {
@@ -54,8 +54,8 @@ const Review = () => {
           </p>
         </div>
         <div className="review-img flex items-center">
-          <img src={reviews[currentReview].image} alt="Reviewer" className="w-20 h-20 object-cover mr-4 lg:w-16 lg:h-16 md:w-14 md:h-14" />
-          <div className="review-name">
+          <img src={reviews[currentReview].image} alt="Reviewer" className="w-20 h-20 object-cover mr-4 lg:w-16 lg:h-16 md:w-14 md:h-14 mt-6" />
+          <div className="review-name mt-6">
             <h3 className="text-lg font-bold tracking-wider mb-1 lg:text-base md:text-sm">{reviews[currentReview].name}</h3>
             <p className="text-sm lg:text-xs">{reviews[currentReview].profession}</p>
           </div>

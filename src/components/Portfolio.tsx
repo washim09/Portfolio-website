@@ -7,15 +7,16 @@ interface Project {
   image: string;
   title: string;
   type: string;
+  link: string;
 }
 
 const portfolioItems: Project[] = [
-  { id: 1, category: 'web-des', image: './portfolio-1.jpg', title: 'O2lenses', type: 'Web Design' },
-  { id: 2, category: 'web-des', image: './portfolio-2.jpg', title: 'Ldt Technology', type: 'Web Design' },
-  { id: 3, category: 'web-dev', image: './portfolio-3.jpg', title: 'Mapmystudy', type: 'Web Development' },
-  { id: 4, category: 'web-dev', image: './portfolio-4.jpg', title: 'Nadaku', type: 'Web Development' },
-  { id: 5, category: 'dig-mar', image: './portfolio-5.jpg', title: 'Acnosoft', type: 'Digital Marketing' },
-  { id: 6, category: 'dig-mar', image: './portfolio-6.jpg', title: 'Drapster', type: 'Digital Marketing' },
+  { id: 1, category: 'web-des', image: './portfolio-1.jpg', title: 'O2lenses', type: 'Web Design', link: 'https://www.o2lenses.com' },
+  { id: 2, category: 'web-des', image: './portfolio-2.jpg', title: 'Ldt Technology', type: 'Web Design', link: 'https://ldttechnology.com' },
+  { id: 3, category: 'web-dev', image: './portfolio-3.jpg', title: 'Mapmystudy', type: 'Web Development', link: 'https://www.mapmystudy.com' },
+  { id: 4, category: 'web-dev', image: './portfolio-4.jpg', title: 'Nadaku', type: 'Web Development', link: 'https://mycontents.id/category/nadaku' },
+  { id: 5, category: 'dig-mar', image: './portfolio-5.jpg', title: 'Acnosoft', type: 'Digital Marketing', link: 'https://www.acnosoft.com' },
+  { id: 6, category: 'dig-mar', image: './portfolio-6.jpg', title: 'Drapster', type: 'Digital Marketing', link: 'https://drapster.com' },
 ];
 
 const Portfolio: React.FC = () => {
@@ -181,7 +182,9 @@ const ProjectItem: React.FC<{ item: Project; index: number; openGallery: (index:
           <Eye size={20} />
         </button>
         <a
-          href="#"
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-[#FF6F61] text-white p-2 rounded-full mx-2 hover:bg-gray-800 transition-colors duration-200"
         >
           <Link size={20} />
