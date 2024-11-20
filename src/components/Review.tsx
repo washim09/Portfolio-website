@@ -3,21 +3,21 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const reviews = [
   {
-    text: "At LDttechnology, Washim Akram impressed us with their creativity and dedication, including building our website. His ability to solve problems and deliver results was truly remarkable. His contributions made a lasting impact, and I wish them success ahead.",
+    text: "At LDTtechnology, Washim Akram impressed us with their creativity and dedication, including building our website. His ability to solve problems and deliver results was truly remarkable. His contributions made a lasting impact, and I wish them success ahead.",
     name: "LDT Technologies Pvt. Ltd.",
-    profession: "CEO, LDT Technologies Pvt. Ltd.",
+    profession: "CEO & CO-FOUNDER, LDT Technologies Pvt. Ltd.",
     image: "./review-1.jpg"
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci. Donec molestie velit id libero blandit, quis suscipit urna suscipit. Donec aliquet erat eu lacinia iaculis. Ut tempor tellus eu sem pharetra feugiat vslvjhslhvlswbvbwepiebkvbb.",
-    name: "Client Name 2",
-    profession: "Profession 2",
+    text: "Washim was key to many projects at Echrontech, known for their quality work, problem-solving skills, and leadership. They created a positive and collaborative environment, leaving a lasting impact. I highly recommend them for any future role.",
+    name: "Echrontech Technology.",
+    profession: "MD, Echrontech Technology.",
     image: "./review-2.jpg"
   },
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci. Donec molestie velit id libero blandit, quis suscipit urna suscipit. Donec aliquet erat eu lacinia iaculis. Ut tempor tellus eu sem pharetra feugiat.",
-    name: "Client Name 3",
-    profession: "Profession 3",
+    text: "Working with Washim at Acnosoft was a pleasure, as they combined strong technical skills with a clear focus on client needs. They consistently delivered innovative solutions and elevated our team’s capabilities. I’m confident they’ll bring great value to any organization.",
+    name: "Acnosoft Digital Marketing Agency",
+    profession: "CEO, Acnosoft Digital Marketing Agency",
     image: "./review-3.jpg"
   }
 ];

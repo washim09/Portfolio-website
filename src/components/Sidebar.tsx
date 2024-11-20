@@ -15,22 +15,24 @@ import {
   faFacebookF,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const location = useLocation();
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
   const navItems = [
-    { name: "Home", icon: faHome, href: "#header", iconClass: "text-white" },
-    { name: "About", icon: faAddressCard, href: "#about", iconClass: "text-red-500" },
-    { name: "Experience", icon: faStar, href: "#experience", iconClass: "text-red-500" },
-    { name: "Service", icon: faTasks, href: "#service", iconClass: "text-red-500" },
-    { name: "Portfolio", icon: faFileArchive, href: "#portfolio", iconClass: "text-red-500" },
-    { name: "Contact", icon: faEnvelope, href: "#contact", iconClass: "text-red-500" },
+    { name: "Home", icon: faHome, href: "/", iconClass: "text-white" },
+    { name: "About", icon: faAddressCard, href: "/about", iconClass: "text-red-500" },
+    { name: "Experience", icon: faStar, href: "/experience", iconClass: "text-red-500" },
+    { name: "Service", icon: faTasks, href: "/service", iconClass: "text-red-500" },
+    { name: "Portfolio", icon: faFileArchive, href: "/portfolio", iconClass: "text-red-500" },
+    { name: "Contact", icon: faEnvelope, href: "/contactme", iconClass: "text-red-500" },
   ];
 
   const socialIcons = [
@@ -79,16 +81,16 @@ const Sidebar: React.FC = () => {
                     transition: 'opacity 300ms, transform 300ms',
                   }}
                 >
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className={`flex items-center px-4 py-2 ${
-                      index === 0 ? 'text-red-500' : 'text-white'
+                      location.pathname === item.href ? 'text-red-500' : 'text-white'
                     }`}
                     onClick={toggleSidebar}
                   >
                     {item.name}
                     <FontAwesomeIcon icon={item.icon} className={`ml-auto ${item.iconClass}`} />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -111,10 +113,10 @@ const Sidebar: React.FC = () => {
             <ul>
               {navItems.map((item, index) => (
                 <li key={item.name} className="mb-2">
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className={`flex items-center px-4 py-2 ${
-                      index === 0 ? 'text-red-500' : 'text-white hover:bg-gray-700'
+                      location.pathname === item.href ? 'text-red-500' : 'text-white hover:bg-gray-700'
                     } transition-all duration-300 ease-in-out`}
                   >
                     <FontAwesomeIcon 
@@ -122,9 +124,9 @@ const Sidebar: React.FC = () => {
                       className={`${item.iconClass} ${isHovered ? 'w-6 mr-4' : 'w-full'}`} 
                     />
                     {isHovered && (
-                      <span className="flex-grow text-right">{item.name}</span>
+                      <span className="flex-grow text-right">{index === 0 ? 'Home' : item.name}</span>
                     )}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -147,7 +149,7 @@ const Sidebar: React.FC = () => {
         </div>
       </div>
 
-      {/* Desktop Sidebar - Unchanged */}
+      {/* Desktop Sidebar */}
       <div className="hidden lg:block fixed inset-y-0 left-16 w-72 bg-white">
         <div className="flex items-center justify-center">
           <img src="./profile-1.jpg" alt="Profile" className="object-fit" />
@@ -156,10 +158,10 @@ const Sidebar: React.FC = () => {
           <ul className="space-y-0">
             {navItems.map((item, index) => (
               <li key={item.name} className={index !== 0 ? "border-t border-gray-600 w-full" : ""}>
-                <a
-                  href={item.href}
+                <Link
+                  to={item.href}
                   className={`flex items-center px-4 py-2 group ${
-                    index === 0
+                    location.pathname === item.href
                       ? "text-red-500"
                       : "text-gray-900 hover:bg-gray-700 hover:text-white"
                   }`}
@@ -167,13 +169,13 @@ const Sidebar: React.FC = () => {
                   <FontAwesomeIcon
                     icon={item.icon}
                     className={`mr-auto ${
-                      index === 0
+                      location.pathname === item.href
                         ? "text-gray-900"
                         : "group-hover:text-red-500"
                     }`}
                   />
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

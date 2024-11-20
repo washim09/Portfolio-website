@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import { Volume2, VolumeX } from "lucide-react";
 import useSound from "use-sound";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
   const typedRefDesktop = useRef(null);
   const typedRefMobile = useRef(null);
   const typedRefTablet = useRef(null);
@@ -50,6 +52,10 @@ const Header = () => {
     setIsMuted(!isMuted);
   };
 
+  const handleHireMe = () => {
+    navigate('/contactme');
+  };
+
   return (
     <>
       {/* Desktop View */}
@@ -85,17 +91,17 @@ const Header = () => {
         </div>
         <div className="flex">
           <a
-            href="#"
+            href="https://flowcv.com/resume/e5rh5bv51i"
             className="w-1/2 py-4 text-center text-xl text-white bg-gray-900 hover:bg-gray-800 transition duration-200"
           >
             <i className="fas fa-download mr-2"></i>Resume
           </a>
-          <a
-            href="#"
+          <button
+            onClick={handleHireMe}
             className="w-1/2 py-4 text-center text-xl text-gray-900 bg-red-500 hover:bg-red-600 transition duration-200"
           >
             <i className="fas fa-hands-helping mr-2"></i>Hire Me
-          </a>
+          </button>
         </div>
       </div>
 
@@ -124,12 +130,12 @@ const Header = () => {
           >
             <i className="fas fa-download mr-2"></i>Resume
           </a>
-          <a
-            href="#"
+          <button
+            onClick={handleHireMe}
             className="w-1/2 py-4 text-center text-lg text-gray-900 bg-red-500 hover:bg-red-600 transition duration-200"
           >
             <i className="fas fa-hands-helping mr-2"></i>Hire Me
-          </a>
+          </button>
         </div>
       </div>
 
@@ -154,12 +160,12 @@ const Header = () => {
           >
             <i className="fas fa-download mr-2"></i>Resume
           </a>
-          <a
-            href="#"
+          <button
+            onClick={handleHireMe}
             className="flex-1 py-4 text-center text-lg text-gray-900 bg-red-500 hover:bg-red-600 transition duration-200"
           >
             <i className="fas fa-hands-helping mr-2"></i>Hire Me
-          </a>
+          </button>
         </div>
       </div>
     </>
