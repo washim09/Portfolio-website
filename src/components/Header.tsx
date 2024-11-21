@@ -91,7 +91,7 @@ const Header = () => {
         </div>
         <div className="flex">
           <a
-            href="./MyResume.pdf" download
+            href="./Resume.pdf" download
             className="w-1/2 py-4 text-center text-xl text-white bg-gray-900 hover:bg-gray-800 transition duration-200"
           >
             <i className="fas fa-download mr-2"></i>Resume

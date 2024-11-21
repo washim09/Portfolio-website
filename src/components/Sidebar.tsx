@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
-  faFacebookF,
+  faGithub,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link, useLocation } from "react-router-dom";
@@ -36,9 +36,9 @@ const Sidebar: React.FC = () => {
   ];
 
   const socialIcons = [
+    { icon: faGithub, href: "https://github.com/washim09" },
     { icon: faTwitter, href: "#" },
-    { icon: faFacebookF, href: "#" },
-    { icon: faLinkedinIn, href: "#" },
+    { icon: faLinkedinIn, href: "https://www.linkedin.com/in/washim-akram-frontend-developer/" },
   ];
 
   return (
