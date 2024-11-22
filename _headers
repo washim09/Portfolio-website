@@ -1,0 +1,9 @@
+/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/images/*
+  Content-Type: image/png
+
+/assets/audio/*
+  Content-Type: audio/mpeg

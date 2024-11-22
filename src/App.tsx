@@ -9,6 +9,7 @@ import Portfolio from './components/Portfolio';
 import ContactMe from './components/ContactMe';
 import Footer from './components/Footer';
 import BackToTopButton from './components/BackToTopButton';
+import noiseBg from './assets/noise_black.png';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -22,7 +23,7 @@ const App: React.FC = () => {
     <Router>
       <div className="flex relative min-h-screen bg-gray-900 w-full max-w-full overflow-x-hidden">
         <div className="noise-wrapper absolute inset-0 opacity-0 overflow-hidden transition-opacity duration-500 z-10">
-          <div className="noise absolute inset-[-500px] bg-[url('./noise_black.png')] bg-repeat opacity-35 animate-noise"></div>
+          <div className="noise absolute inset-[-500px] bg-[url('/assets/noise_black.png')] bg-repeat opacity-35 animate-noise"></div>
         </div>
         <div className="flex-grow z-20 relative">
           <Sidebar />

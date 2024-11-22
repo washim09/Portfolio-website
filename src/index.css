@@ -4,6 +4,7 @@
 
 
 
+
 /* body, html {
   margin: 0;
   padding: 0;
@@ -23,6 +24,8 @@
 @layer base {
   body {
     color: #fff;
+    background-image: url('./noise_black.png');
+    background-repeat: repeat;
   }
 }
 
@@ -45,7 +48,6 @@
   90% { transform: translate(0px, 200px); }
   100% { transform: translate(-100px, 100px); }
 }
-
 
 @keyframes borderLoop {
   0%, 100% { 
@@ -70,17 +72,15 @@
   animation: borderLoop 16s linear infinite;
 }
 
-
 @keyframes jump {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
 .animate-jump {
   animation: jump 1s ease-in-out infinite;
 }
+
 .hover\:animate-none:hover {
   animation: none;
 }
-
-
-
