@@ -11,24 +11,22 @@ const Footer: React.FC = () => {
             <div className="text-left">
               <p className="text-white">
                 &copy; Copyright{" "}
-                <a
-                  href="https://htmlcodex.com"
+                <span
                   className="text-[#FF6F61] font-semibold hover:text-white"
                 >
                   @
-                </a>{" "}
+                </span>{" "}
                 The Washim Coder 2024
               </p>
             </div>
             <div className="text-right">
               <p className="text-white">
                 Powered by{" "}
-                <a
-                  href="https://htmlcodex.com"
+                <span
                   className="text-[#FF6F61] font-semibold hover:text-white"
                 >
                   React Vite
-                </a>
+                </span>
               </p>
             </div>
             <div className="flex items-center">
@@ -49,12 +47,11 @@ const Footer: React.FC = () => {
               <div className="text-left">
                 <p className="text-white text-[12px]">
                   &copy; Copyright{" "}
-                  <a
-                    href="https://htmlcodex.com"
+                  <span
                     className="text-[#FF6F61] font-semibold hover:text-white"
                   >
                     @
-                  </a>{" "}
+                  </span>{" "}
                   The Washim Coder 2024
                 </p>
               </div>
@@ -69,12 +66,11 @@ const Footer: React.FC = () => {
               <div className="text-right">
                 <p className="text-white text-sm">
                   Powered by{" "}
-                  <a
-                    href="https://htmlcodex.com"
+                  <span
                     className="text-[#FF6F61] font-semibold hover:text-white"
                   >
                     React Vite
-                  </a>
+                  </span>
                 </p>
               </div>
             </div>
@@ -89,22 +85,20 @@ const Footer: React.FC = () => {
           <div className="flex flex-col space-y-3 text-center">
             <p className="text-white text-xs">
               &copy; Copyright{" "}
-              <a
-                href="https://htmlcodex.com"
+              <span
                 className="text-[#FF6F61] font-semibold hover:text-white"
               >
                 @
-              </a>{" "}
+              </span>{" "}
               The Washim Coder 2024
             </p>
             <p className="text-white text-xs">
               Powered by{" "}
-              <a
-                href="https://htmlcodex.com"
+              <span
                 className="text-[#FF6F61] font-semibold hover:text-white"
               >
                 React Vite
-              </a>
+              </span>
             </p>
             <div className="flex justify-center items-center">
               <Smartphone className="text-[#FF6F61] mr-1 hover:text-white" size={16} />

@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import {
-  User, Tag, Mail, Phone, MapPin, Twitter, Facebook, Linkedin, Instagram, Youtube,
+  User, Tag, Mail, Phone, MapPin, Twitter, Facebook, Linkedin, Github, Youtube, 
 } from 'lucide-react';
 
 interface FormData {
@@ -158,11 +158,15 @@ const ContactInfo: React.FC = () => (
       </p>
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <Mail className="w-6 h-6 mr-3 text-[#FF6F61]" />
-        <a href="mailto:akrmwashim09@gmail.com" className="text-gray-700 hover:text-[#FF6F61]">akrmwashim09@gmail.com</a>
+        <a href="mailto:akrmwashim09@gmail.com" className="text-gray-700 hover:text-[#FF6F61]">
+          akrmwashim09@gmail.com
+        </a>
       </p>
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <Phone className="w-6 h-6 mr-3 text-[#FF6F61]" />
-        <a href="tel:+919999413369" className="text-gray-700 hover:text-[#FF6F61]">+91 9999413369</a>
+        <a href="tel:+919999413369" className="text-gray-700 hover:text-[#FF6F61]">
+          +91 9999413369
+        </a>
       </p>
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <MapPin className="w-6 h-6 mr-3 text-[#FF6F61]" />
@@ -170,15 +174,46 @@ const ContactInfo: React.FC = () => (
       </p>
     </div>
     <div className="social mt-6 space-x-2">
-      {[Twitter, Facebook, Linkedin, Instagram, Youtube].map((Icon, index) => (
-        <a
-          key={index}
-          href="#"
-          className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
-        >
-          <Icon className="w-full h-full p-2" />
-        </a>
-      ))}
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
+      >
+        <Twitter className="w-full h-full p-2" />
+      </a>
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
+      >
+        <Facebook className="w-full h-full p-2" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/washim-akram-frontend-developer/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
+      >
+        <Linkedin className="w-full h-full p-2" />
+      </a>
+      <a
+        href="https://github.com/washim09"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
+      >
+        <Github className="w-full h-full p-2" />
+      </a>
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
+      >
+        <Youtube className="w-full h-full p-2" />
+      </a>
     </div>
   </div>
 );
