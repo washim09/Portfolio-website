@@ -11,6 +11,7 @@ const Header = () => {
   const typedRefTablet = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobileMuteVisible, setIsMobileMuteVisible] = useState(false);
   const [play, { stop }] = useSound("./static-noise.mp3", {
     loop: true,
     volume: 0.5,
@@ -140,7 +141,20 @@ const Header = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-[82px] relative">
+      <div 
+        className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-[82px] relative"
+        onTouchStart={() => setIsMobileMuteVisible(true)}
+        onTouchEnd={() => setTimeout(() => setIsMobileMuteVisible(false), 3000)}
+      >
+        {/* Added mute/unmute button for mobile */}
+        <button
+          onClick={toggleMute}
+          className="absolute top-2 left-2 text-red-500 hover:text-gray-900 transition-opacity duration-300"
+          style={{ opacity: isMobileMuteVisible ? 1 : 0 }}
+        >
+          {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+        </button>
+        
         <div className="py-16 px-4">
           <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
           <h1 className="text-gray-900 text-4xl font-bold mb-2">
