@@ -140,20 +140,17 @@ const Header = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="bg-white md:hidden relative m-4 w-72">
-        <div className="mt-20 relative">
-          <img src="./profile.png" alt="Michael Miller" className="w-72 object-cover" />
-          <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-start ml-4">
-            <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
-            <h1 className="text-gray-900 text-4xl font-bold mb-2">
-              Washim Akram
-            </h1>
-            <h2 className="text-xl font-light text-gray-600">
-              <span ref={typedRefMobile}></span>
-            </h2>
-          </div>
+      <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-[82px] relative">
+        <div className="py-16 px-4">
+          <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
+          <h1 className="text-gray-900 text-4xl font-bold mb-2">
+            Washim Akram
+          </h1>
+          <h2 className="text-xl font-light text-gray-600">
+            <span ref={typedRefMobile}></span>
+          </h2>
         </div>
-        <div className="flex mt-4">
+        <div className="flex">
           <a
             href="#"
             className="flex-1 py-4 text-center text-lg text-white bg-gray-900 hover:bg-gray-800 transition duration-200"

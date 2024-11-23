@@ -13,7 +13,7 @@ const EducationItem: React.FC<EducationItemProps> = ({ startDate, endDate, degre
 
   return (
     <div 
-      className="relative pl-6 pb-8 border-l border-[#FF6F61] last:border-b-0 last:pb-0"
+      className="relative pl-6 pb-8 border-l border-[#FF6F61]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -102,7 +102,7 @@ const Education = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="bg-white md:hidden m-4 w-72 py-4 px-4 text-[#222222]">
+      <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 py-4 px-4 text-[#222222]">
         <h2 className="text-xl font-bold mb-4 relative inline-block">
           Education
           <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>

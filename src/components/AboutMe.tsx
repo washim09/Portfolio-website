@@ -73,7 +73,7 @@ const AboutMe = () => {
           </div>
           <div className="w-3/5 mt-20">
             <p className="mb-6 text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci. Donec molestie velit id libero blandit, quis suscipit urna suscipit. Donec aliquet erat eu lacinia iaculis.
+            I'm a full-stack developer skilled in the MERN stack, with experience building responsive and user-friendly web applications using React Vite and Tailwind CSS. I excel at creating intuitive admin dashboards, scalable backend APIs, and interactive frontends. Passionate about simplifying complex problems, I deliver high-quality solutions that drive impactful user experiences.
             </p>
             <button className="bg-[#FF6F61] text-white text-sm px-4 py-2 mb-6 hover:bg-[#222222] transition duration-300">
               Hire Me
@@ -94,14 +94,14 @@ const AboutMe = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="bg-white md:hidden m-4 w-72 py-4 px-4 text-[#222222]">
+      <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 py-4 px-4 text-[#222222]">
         <h2 className="text-xl font-bold mb-4 relative inline-block">
           About Me
           <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>
         </h2>
         <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80" />
-        <p className="mb-3 text-xs leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci. Donec molestie velit id libero blandit, quis suscipit urna suscipit.
+        <p className="mb-3 text-xs leading-relaxed mt-3">
+        I'm a full-stack developer skilled in the MERN stack, with experience building responsive and user-friendly web applications using React Vite and Tailwind CSS. I excel at creating intuitive admin dashboards, scalable backend APIs, and interactive frontends. Passionate about simplifying complex problems, I deliver high-quality solutions that drive impactful user experiences.
         </p>
         <button className="bg-[#FF6F61] text-white text-xs px-3 py-1.5 mb-4 hover:bg-[#222222] transition duration-300">
           Hire Me

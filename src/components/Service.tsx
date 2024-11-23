@@ -68,7 +68,7 @@ const Service = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="bg-white md:hidden m-4 w-72 py-4 px-4 text-[#222222]">
+      <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 py-4 px-4 text-[#222222]">
         <h2 className="text-xl font-bold mb-4 relative inline-block">
           Service
           <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>

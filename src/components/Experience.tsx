@@ -114,7 +114,7 @@ const Experience = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="bg-white md:hidden m-4 w-72 py-4 px-4 text-[#222222]">
+      <div className="bg-white md:hidden mt-4 mx-4 w-[calc(100%-2rem)] py-4 px-4 text-[#222222]">
         <h2 className="text-xl font-bold mb-4 relative inline-block">
           Experience
           <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>

@@ -111,7 +111,7 @@ const Review = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="bg-white md:hidden m-4 w-72 px-4 text-[#222222]">
+      <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 px-4 text-[#222222]">
         <div 
           className="py-8 relative" 
           style={{backgroundImage: "url('./quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom', backgroundSize: '80px'}}

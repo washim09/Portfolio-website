@@ -47,7 +47,6 @@ const Sidebar: React.FC = () => {
       <div className="fixed top-0 left-0 w-full bg-gray-800 text-white md:hidden z-50">
         {/* Always visible navigation bar */}
         <div className="flex items-center justify-between p-4">
-          <h2 className="text-lg font-semibold">Navigation</h2>
           <button className="text-white focus:outline-none" onClick={toggleSidebar}>
             <FontAwesomeIcon icon={faBars} size="2x" />
           </button>
@@ -60,9 +59,8 @@ const Sidebar: React.FC = () => {
           }`}
         >
           {/* Navigation header within the dropdown */}
-          <div className="flex items-center justify-between p-4">
-            <h2 className="text-lg font-semibold">Navigation</h2>
-            <button className="text-white focus:outline-none" onClick={toggleSidebar}>
+          <div className="flex items-center justify-end p-4">
+            <button className="text-white focus:outline-none right-10" onClick={toggleSidebar}>
               <FontAwesomeIcon icon={faTimes} size="2x" />
             </button>
           </div>

@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
       </footer>
 
       {/* Mobile View */}
-      <footer className="m-4 w-72 py-4 px-3 md:hidden">
+      <footer className="mx-4 w-[calc(100%-2rem)] py-4 px-3 md:hidden">
         <div className="container mx-auto">
           <div className="flex flex-col space-y-3 text-center">
             <p className="text-white text-xs">

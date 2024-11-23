@@ -121,7 +121,7 @@ const ContactMe: React.FC = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="bg-white md:hidden m-4 w-72 py-4 px-4 text-[#222222]">
+      <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 py-4 px-4 text-[#222222]">
         <h2 className="text-xl font-bold mb-4 relative inline-block">
           Contact
           <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]" />
@@ -238,6 +238,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
           value={formData.name}
           onChange={handleChange}
           placeholder="Your Name"
+          required
+          autoComplete='off'
           className={`w-full p-2 border ${errors.name ? 'border-red-500' : 'border-gray-300'} focus:border-[#FF6F61] focus:outline-none`}
         />
         {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
@@ -249,6 +251,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
           value={formData.email}
           onChange={handleChange}
           placeholder="Your Email"
+          required
+          autoComplete='off'
           className={`w-full p-2 border ${errors.email ? 'border-red-500' : 'border-gray-300'} focus:border-[#FF6F61] focus:outline-none`}
         />
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -261,6 +265,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
         value={formData.subject}
         onChange={handleChange}
         placeholder="Subject"
+        required
+        autoComplete='off'
         className={`w-full p-2 border ${errors.subject ? 'border-red-500' : 'border-gray-300'} focus:border-[#FF6F61] focus:outline-none`}
       />
       {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
@@ -271,6 +277,9 @@ const ContactForm: React.FC<ContactFormProps> = ({
         value={formData.message}
         onChange={handleChange}
         placeholder="Your Message"
+        required
+        autoComplete='off'
+        minLength={5}
         className={`w-full p-2 border ${errors.message ? 'border-red-500' : 'border-gray-300'} focus:border-[#FF6F61] focus:outline-none`}
         rows={4}
       />
