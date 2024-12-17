@@ -99,7 +99,7 @@ const AboutMe = () => {
           About Me
           <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>
         </h2>
-        <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80" />
+        <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80 ml-4" />
         <p className="mb-3 text-xs leading-relaxed mt-3">
         I'm a full-stack developer skilled in the MERN stack, with experience building responsive and user-friendly web applications using React Vite and Tailwind CSS. I excel at creating intuitive admin dashboards, scalable backend APIs, and interactive frontends. Passionate about simplifying complex problems, I deliver high-quality solutions that drive impactful user experiences.
         </p>

@@ -61,7 +61,7 @@ const Header = () => {
     <>
       {/* Desktop View */}
       <div 
-        className="bg-white ml-96 mt-10 w-[850px] relative hidden lg:block"
+        className="bg-white ml-96 w-[850px] h-[450px] mt-10 relative hidden lg:flex flex-col items-center justify-center"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -74,23 +74,16 @@ const Header = () => {
             {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
           </button>
         )}
-        <div className="mx-auto px-8">
-          <div className="py-8 flex items-center justify-between">
-            <div className="flex items-center">
-              <div>
-                <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
-                <h1 className="text-gray-900 text-5xl font-bold mb-2">
-                  Washim Akram
-                </h1>
-                <h2 className="text-2xl font-light text-gray-600">
-                  <span ref={typedRefDesktop}></span>
-                </h2>
-              </div>
-            </div>
-            <img src="./profile.png" alt="Michael Miller" className="object-left" />
-          </div>
+        <div className="flex flex-col items-start px-8">
+          <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
+          <h1 className="text-gray-900 text-5xl font-bold mb-2">
+            Washim Akram
+          </h1>
+          <h2 className="text-2xl font-light text-gray-600">
+            <span ref={typedRefDesktop}></span>
+          </h2>
         </div>
-        <div className="flex">
+        <div className="flex w-full absolute bottom-0">
           <a
             href="./Resume.pdf" download
             className="w-1/2 py-4 text-center text-xl text-white bg-gray-900 hover:bg-gray-800 transition duration-200"
@@ -107,33 +100,39 @@ const Header = () => {
       </div>
 
       {/* Tablet View */}
-      <div className="bg-white ml-20 mt-5 w-[668px] relative hidden md:block lg:hidden">
-        <div className="px-4">
-          <div className="py-8 flex items-center justify-between">
-            <div className="flex items-center">
-              <div>
-                <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
-                <h1 className="text-gray-900 text-4xl font-bold mb-2">
-                  Washim Akram
-                </h1>
-                <h2 className="text-xl font-light text-gray-600">
-                  <span ref={typedRefTablet}></span>
-                </h2>
-              </div>
-            </div>
-            <img src="./profile.png" alt="Michael Miller" className="object-cover w-52 h-72" />
-          </div>
+      <div 
+        className="bg-white ml-20 w-[668px] h-[350px] mt-10 relative hidden md:flex lg:hidden flex-col items-center justify-center"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {isHovered && (
+          <button
+            onClick={toggleMute}
+            className="absolute top-2 left-2 text-red-500 hover:text-gray-900 transition-opacity duration-300"
+            style={{ opacity: isHovered ? 1 : 0 }}
+          >
+            {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+          </button>
+        )}
+        <div className="flex flex-col items-center text-center px-6">
+          <p className="text-red-500 text-lg font-semibold mb-2">I'm</p>
+          <h1 className="text-gray-900 text-4xl font-bold mb-2">
+            Washim Akram
+          </h1>
+          <h2 className="text-xl font-light text-gray-600">
+            <span ref={typedRefTablet}></span>
+          </h2>
         </div>
-        <div className="flex">
+        <div className="flex w-full absolute bottom-0">
           <a
             href="./Resume.pdf" download
-            className="w-1/2 py-4 text-center text-lg text-white bg-gray-900 hover:bg-gray-800 transition duration-200"
+            className="w-1/2 py-3 text-center text-lg text-white bg-gray-900 hover:bg-gray-800 transition duration-200"
           >
             <i className="fas fa-download mr-2"></i>Resume
           </a>
           <button
             onClick={handleHireMe}
-            className="w-1/2 py-4 text-center text-lg text-gray-900 bg-red-500 hover:bg-red-600 transition duration-200"
+            className="w-1/2 py-3 text-center text-lg text-gray-900 bg-red-500 hover:bg-red-600 transition duration-200"
           >
             <i className="fas fa-hands-helping mr-2"></i>Hire Me
           </button>
