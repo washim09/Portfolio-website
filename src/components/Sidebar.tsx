@@ -11,7 +11,7 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faTwitter,
+  faInstagram,
   faGithub,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
@@ -37,7 +37,7 @@ const Sidebar: React.FC = () => {
 
   const socialIcons = [
     { icon: faGithub, href: "https://github.com/washim09" },
-    { icon: faTwitter, href: "#" },
+    { icon: faInstagram, href: "https://www.instagram.com/washim975?igsh=ZDgwMm5vYTRidndw" },
     { icon: faLinkedinIn, href: "https://www.linkedin.com/in/washim-akram-frontend-developer/" },
   ];
 
@@ -105,7 +105,13 @@ const Sidebar: React.FC = () => {
       >
         <div className="flex flex-col h-full">
           <div className="p-4">
-            <img src="./profile.jpg" alt="Profile" className="w-full h-auto" />
+            <div className="w-full h-36 overflow-hidden flex items-center justify-center">
+              <img
+                src="/my-pic-white-background.png"
+                alt="Profile"
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
           </div>
           <nav className="flex-grow">
             <ul>
@@ -149,8 +155,12 @@ const Sidebar: React.FC = () => {
 
       {/* Desktop Sidebar */}
       <div className="hidden lg:block fixed inset-y-0 left-16 w-72 bg-white">
-        <div className="flex items-center justify-center">
-          <img src="./profile-1.jpg" alt="Profile" className="object-fit" />
+        <div className="w-full h-52 overflow-hidden flex items-center justify-center border-b border-gray-200">
+          <img
+            src="/my-pic-white-background.png"
+            alt="Profile"
+            className="max-w-full max-h-full object-contain"
+          />
         </div>
         <nav className="mt-4">
           <ul className="space-y-0">

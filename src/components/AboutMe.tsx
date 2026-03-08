@@ -38,10 +38,25 @@ const AboutMe = () => {
           <div className="w-2/5 pr-8">
             <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80" />
           </div>
-          <div className="w-3/5 mt-20">
-            <p className="mb-6">
-            I'm a full-stack developer skilled in the MERN stack, with experience building responsive and user-friendly web applications using React Vite and Tailwind CSS. I excel at creating intuitive admin dashboards, scalable backend APIs, and interactive frontends. Passionate about simplifying complex problems, I deliver high-quality solutions that drive impactful user experiences.
-            </p>
+          <div className="w-3/5 mt-0">
+            <div className="mb-6 space-y-4 text-sm leading-relaxed">
+              <p>
+                Hi, I am Washim Akram - a Full-Stack Developer who enjoys building complete, scalable web products from idea to deployment.
+              </p>
+              <p>
+                With over 4 years of experience, I work across both frontend and backend technologies, specializing in React, TypeScript, Node.js, Express, and PostgreSQL. I focus on writing clean, maintainable code and designing systems that are scalable, secure, and performance-optimized.
+              </p>
+              <p>
+                As the Founder of Riviewit, I built a production-ready review platform from scratch. I designed and implemented the frontend architecture using React and TypeScript, developed backend APIs with Node.js and Express, structured the database using PostgreSQL, and handled authentication and deployment.
+              </p>
+              <p>
+                I also worked on real-time features, including chat and call system integrations, ensuring smooth communication between users through robust backend design, API handling, and system-level performance thinking.
+              </p>
+              <p>
+                I approach development with a product mindset - understanding business goals, user experience, and long-term scalability before writing code. I am open to remote opportunities and freelance projects where I can contribute as a full-stack engineer and help turn ideas into reliable, real-world applications.
+              </p>
+              <p>Let us build something impactful.</p>
+            </div>
             <button className="bg-[#FF6F61] text-white px-6 py-2 mb-8 hover:bg-[#222222] transition duration-300">
               Hire Me
             </button>
@@ -72,9 +87,24 @@ const AboutMe = () => {
             <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80" />
           </div>
           <div className="w-3/5 mt-20">
-            <p className="mb-6 text-sm">
-            I'm a full-stack developer skilled in the MERN stack, with experience building responsive and user-friendly web applications using React Vite and Tailwind CSS. I excel at creating intuitive admin dashboards, scalable backend APIs, and interactive frontends. Passionate about simplifying complex problems, I deliver high-quality solutions that drive impactful user experiences.
-            </p>
+            <div className="mb-6 space-y-3 text-xs leading-relaxed">
+              <p>
+                Hi, I am Washim Akram - a Full-Stack Developer who enjoys building complete, scalable web products from idea to deployment.
+              </p>
+              <p>
+                With over 4 years of experience, I work across both frontend and backend technologies, specializing in React, TypeScript, Node.js, Express, and PostgreSQL.
+              </p>
+              <p>
+                As the Founder of Riviewit, I built a production-ready review platform from scratch and handled frontend architecture, backend APIs, database design, authentication, and deployment.
+              </p>
+              <p>
+                I also implemented real-time features, including chat and call system integrations, with strong focus on API handling, reliability, and performance.
+              </p>
+              <p>
+                I am open to remote opportunities and freelance projects where I can contribute as a full-stack engineer and build reliable, scalable products.
+              </p>
+              <p>Let us build something impactful.</p>
+            </div>
             <button className="bg-[#FF6F61] text-white text-sm px-4 py-2 mb-6 hover:bg-[#222222] transition duration-300">
               Hire Me
             </button>
@@ -100,9 +130,20 @@ const AboutMe = () => {
           <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>
         </h2>
         <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80 ml-4" />
-        <p className="mb-3 text-xs leading-relaxed mt-3">
-        I'm a full-stack developer skilled in the MERN stack, with experience building responsive and user-friendly web applications using React Vite and Tailwind CSS. I excel at creating intuitive admin dashboards, scalable backend APIs, and interactive frontends. Passionate about simplifying complex problems, I deliver high-quality solutions that drive impactful user experiences.
-        </p>
+        <div className="mb-3 mt-3 space-y-3 text-xs leading-relaxed">
+          <p>
+            Hi, I am Washim Akram - a Full-Stack Developer who builds complete, scalable web products from idea to deployment.
+          </p>
+          <p>
+            With 4+ years of experience, I specialize in React, TypeScript, Node.js, Express, and PostgreSQL, with focus on clean code, scalability, security, and performance.
+          </p>
+          <p>
+            As Founder of Riviewit, I delivered a production-ready platform end-to-end, including frontend architecture, backend APIs, database design, authentication, deployment, and real-time chat/call integrations.
+          </p>
+          <p>
+            I am open to remote and freelance full-stack opportunities. Let us build something impactful.
+          </p>
+        </div>
         <button className="bg-[#FF6F61] text-white text-xs px-3 py-1.5 mb-4 hover:bg-[#222222] transition duration-300">
           Hire Me
         </button>

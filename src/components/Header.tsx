@@ -74,14 +74,23 @@ const Header = () => {
             {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
           </button>
         )}
-        <div className="flex flex-col items-start px-8">
-          <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
-          <h1 className="text-gray-900 text-5xl font-bold mb-2">
-            Washim Akram
-          </h1>
-          <h2 className="text-2xl font-light text-gray-600">
-            <span ref={typedRefDesktop}></span>
-          </h2>
+        <div className="w-full h-full flex items-center justify-between px-8 pb-20 gap-10">
+          <div className="flex flex-col items-start pl-28">
+            <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
+            <h1 className="text-gray-900 text-5xl font-bold mb-2">
+              Washim Akram
+            </h1>
+            <h2 className="text-2xl font-light text-gray-600">
+              <span ref={typedRefDesktop}></span>
+            </h2>
+          </div>
+          <div className="flex-shrink-0 w-[240px] h-[310px] flex items-end justify-center">
+            <img
+              src="/my-pic-white-background.png"
+              alt="Washim Akram"
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
         </div>
         <div className="flex w-full absolute bottom-0">
           <a

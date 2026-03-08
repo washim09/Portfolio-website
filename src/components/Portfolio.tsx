@@ -8,15 +8,174 @@ interface Project {
   title: string;
   type: string;
   link: string;
+  purpose: string;
+  features: string[];
+  technologies: string[];
+  contributions: string[];
 }
 
 const portfolioItems: Project[] = [
-  { id: 1, category: 'web-des', image: './portfolio-1.jpg', title: 'O2lenses', type: 'Web Design', link: 'https://www.o2lenses.com' },
-  { id: 2, category: 'web-des', image: './portfolio-2.jpg', title: 'Ldt Technology', type: 'Web Design', link: 'https://ldttechnology.com' },
-  { id: 3, category: 'web-dev', image: './portfolio-3.jpg', title: 'Mapmystudy', type: 'Web Development', link: 'https://www.mapmystudy.com' },
-  { id: 4, category: 'web-dev', image: './portfolio-4.jpg', title: 'Nadaku', type: 'Web Development', link: 'https://mycontents.id/category/nadaku' },
-  { id: 5, category: 'dig-mar', image: './portfolio-5.jpg', title: 'Acnosoft', type: 'Digital Marketing', link: 'https://www.acnosoft.com' },
-  { id: 6, category: 'dig-mar', image: './portfolio-6.jpg', title: 'Drapster', type: 'Digital Marketing', link: 'https://drapster.com' },
+  {
+    id: 1,
+    category: 'web-des',
+    image: './portfolio-1.jpg',
+    title: 'O2lenses',
+    type: 'Web Design',
+    link: 'https://www.o2lenses.com',
+    purpose: 'Corporate product website for anti-glare lens products to improve brand credibility and lead capture.',
+    features: [
+      'Responsive homepage and product showcase sections',
+      'Brand-focused hero banners and product callouts',
+      'Clear navigation for product and contact discovery',
+    ],
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+    contributions: [
+      'Designed and implemented the complete frontend layout',
+      'Created reusable UI sections for product storytelling',
+      'Optimized responsive behavior for desktop and mobile devices',
+    ],
+  },
+  {
+    id: 2,
+    category: 'web-des',
+    image: './portfolio-2.jpg',
+    title: 'Ldt Technology',
+    type: 'Web Design',
+    link: 'https://ldttechnology.com',
+    purpose: 'End-to-end technology company website built from scratch to showcase services, establish brand credibility, and generate qualified inbound inquiries.',
+    features: [
+      'Complete custom UI/UX architecture designed and implemented from the ground up',
+      'Responsive service pages and interactive content sections across all breakpoints',
+      'Dynamic inquiry flow with secure contact forms and conversion-focused CTAs',
+    ],
+    technologies: ['React.js', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'PHP', 'REST API Integration'],
+    contributions: [
+      'Solely designed and developed the full website lifecycle from concept to deployment',
+      'Built frontend with React.js using reusable components and structured page architecture',
+      'Implemented mobile, tablet, and desktop responsive behavior with cross-browser support',
+      'Developed backend in PHP for form handling, server-side validation, and data processing',
+      'Integrated frontend with backend APIs for secure inquiry submission and communication',
+      'Optimized performance, user flow, and lead conversion across key landing sections',
+    ],
+  },
+  {
+    id: 3,
+    category: 'web-dev',
+    image: './portfolio-3.jpg',
+    title: 'Mapmystudy',
+    type: 'Web Development',
+    link: 'https://www.mapmystudy.com',
+    purpose: 'Education campaign platform focused on seminar landing pages, lead capture, and conversion-driven user journeys.',
+    features: [
+      'Responsive seminar landing pages for campaign-based promotions',
+      'Conversion-focused UI blocks including forms, CTAs, banners, and structured sections',
+      'Dynamic form flows for registrations and lead capture with real-time validation',
+    ],
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Bootstrap', 'PHP', 'REST API'],
+    contributions: [
+      'Designed and developed responsive landing pages for education seminars and marketing campaigns',
+      'Implemented dynamic form handling and validation using JavaScript and jQuery',
+      'Integrated REST APIs for seminar registrations, lead capture, and backend communication',
+      'Collaborated with PHP backend to connect frontend forms with server-side processing',
+      'Ensured cross-browser compatibility and mobile responsiveness with Bootstrap',
+      'Optimized page speed and campaign performance while keeping SEO-friendly page structure',
+    ],
+  },
+  {
+    id: 4,
+    category: 'web-dev',
+    image: './portfolio-4.jpg',
+    title: 'Nadaku',
+    type: 'Web Development',
+    link: 'https://mycontents.id/category/nadaku',
+    purpose: 'Music-first web module built around third-party Music API integration to deliver real-time tracks, playlists, and album discovery.',
+    features: [
+      'Integrated third-party Music API for tracks, playlists, and album data',
+      'Asynchronous REST API fetching with dynamic UI updates',
+      'Playback-ready responsive interface for seamless media browsing',
+    ],
+    technologies: ['Music API', 'REST API', 'JavaScript', 'React', 'State Management', 'CSS'],
+    contributions: [
+      'Handled API authentication, request lifecycle management, and endpoint integration',
+      'Implemented async data fetching for dynamic rendering of tracks, playlists, and albums',
+      'Managed state transitions for media lists, playback state, and UI synchronization',
+      'Built error handling and fallback UI for API downtime, timeouts, and failed requests',
+      'Optimized rendering performance for media-heavy views and frequent API updates',
+      'Ensured responsive, smooth user experience during audio playback across devices',
+    ],
+  },
+  {
+    id: 5,
+    category: 'dig-mar',
+    image: './portfolio-5.jpg',
+    title: 'Acnosoft',
+    type: 'Digital Marketing',
+    link: 'https://www.acnosoft.com',
+    purpose: 'Agency website supporting digital marketing campaigns with conversion-driven landing experiences.',
+    features: [
+      'Campaign landing page UI sections',
+      'Lead capture components and CTA optimization',
+      'SEO-friendly page structure and content blocks',
+    ],
+    technologies: [
+      'Google Analytics',
+      'Google Ads',
+      'Google Search Console',
+      'Meta Ads Manager',
+      'SEMrush / Ahrefs',
+      'Keyword Research Tools',
+      'CRO Tools',
+      'Social Media Marketing Tools',
+    ],
+    contributions: [
+      'Implemented landing pages for performance campaigns',
+      'Collaborated on SEO-oriented frontend structure',
+      'Tracked and improved key engagement interactions',
+    ],
+  },
+  {
+    id: 6,
+    category: 'dig-mar',
+    image: './portfolio-6.jpg',
+    title: 'Webpulse India',
+    type: 'Digital Marketing',
+    link: 'https://www.webpulseindia.com/',
+    purpose: 'Digital marketing agency website focused on helping businesses improve online visibility, generate qualified leads, and increase conversion performance.',
+    features: [
+      'SEO-focused service pages and conversion-oriented landing sections',
+      'Digital campaign highlights for paid media and social growth',
+      'Lead capture touchpoints aligned to agency service funnels',
+    ],
+    technologies: ['SEO Tools', 'Google Ads', 'Google Analytics', 'Search Console', 'Social Media Platforms'],
+    contributions: [
+      'Led on-page and off-page SEO strategy implementation to improve rankings',
+      'Performed keyword research and competitor analysis for content and campaign direction',
+      'Managed Google Ads campaigns including targeting, budget control, and optimization',
+      'Built social media marketing strategy aligned with lead generation goals',
+      'Tracked campaign performance through analytics dashboards and actionable reporting',
+      'Optimized lead funnels and conversion paths to improve inquiry quality and volume',
+    ],
+  },
+  {
+    id: 7,
+    category: 'personal-pro',
+    image: './portfolio-8.jpg',
+    title: 'Riviewit',
+    type: 'Personal Project',
+    link: 'https://riviewit.com/',
+    purpose: 'A trust-first review platform where users share genuine product and service experiences with image and video proof.',
+    features: [
+      'User authentication and profile-based review publishing',
+      'Image and video uploads for proof-backed reviews',
+      'Search, filtering, and category navigation for better discovery',
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
+    contributions: [
+      'Architected and built the platform end-to-end as founder and developer',
+      'Implemented frontend UX flows and backend API integration',
+      'Designed scalable data flow, moderation logic, and deployment setup',
+    ],
+  },
 ];
 
 const Portfolio: React.FC = () => {
@@ -26,14 +185,14 @@ const Portfolio: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [showLeftArrow, setShowLeftArrow] = useState<boolean>(false);
   const [showRightArrow, setShowRightArrow] = useState<boolean>(false);
-  const [showCloseButton, setShowCloseButton] = useState<boolean>(false);
 
   useEffect(() => {
-    setProjects(portfolioItems);
-  }, []);
+    if (filter === '*') {
+      setProjects([...portfolioItems].sort((a, b) => b.id - a.id));
+      return;
+    }
 
-  useEffect(() => {
-    setProjects(portfolioItems.filter(item => filter === '*' || item.category === filter));
+    setProjects(portfolioItems.filter(item => item.category === filter));
   }, [filter]);
 
   const openGallery = (index: number) => {
@@ -63,7 +222,7 @@ const Portfolio: React.FC = () => {
             <span className="absolute left-0 w-1/4 h-1 top-12 bg-[#FF6F61]"></span>
           </h2>
           <ul className="flex justify-start space-x-4 mb-8">
-            {['*', 'web-des', 'web-dev', 'dig-mar'].map((category) => (
+            {['*', 'web-des', 'web-dev', 'dig-mar', 'personal-pro'].map((category) => (
               <li key={category}>
                 <button
                   onClick={() => setFilter(category)}
@@ -73,7 +232,15 @@ const Portfolio: React.FC = () => {
                       : 'bg-white text-gray-700 border border-[#FF6F61]'
                   } rounded-md transition-colors duration-200`}
                 >
-                  {category === '*' ? 'All' : category === 'web-des' ? 'Design' : category === 'web-dev' ? 'Development' : 'Digital Marketing'}
+                  {category === '*'
+                    ? 'All'
+                    : category === 'web-des'
+                      ? 'Design'
+                      : category === 'web-dev'
+                        ? 'Development'
+                        : category === 'dig-mar'
+                          ? 'Digital Marketing'
+                          : 'Personal Projects'}
                 </button>
               </li>
             ))}
@@ -94,7 +261,7 @@ const Portfolio: React.FC = () => {
             <span className="absolute left-0 w-1/4 h-1 top-10 bg-[#FF6F61]"></span>
           </h2>
           <ul className="flex flex-wrap justify-start space-x-2 space-y-2 mb-8">
-            {['*', 'web-des', 'web-dev', 'dig-mar'].map((category) => (
+            {['*', 'web-des', 'web-dev', 'dig-mar', 'personal-pro'].map((category) => (
               <li key={category}>
                 <button
                   onClick={() => setFilter(category)}
@@ -104,7 +271,15 @@ const Portfolio: React.FC = () => {
                       : 'bg-white text-gray-700 border border-[#FF6F61]'
                   } rounded-md transition-colors duration-200`}
                 >
-                  {category === '*' ? 'All' : category === 'web-des' ? 'Design' : category === 'web-dev' ? 'Development' : 'Digital Marketing'}
+                  {category === '*'
+                    ? 'All'
+                    : category === 'web-des'
+                      ? 'Design'
+                      : category === 'web-dev'
+                        ? 'Development'
+                        : category === 'dig-mar'
+                          ? 'Digital Marketing'
+                          : 'Personal Projects'}
                 </button>
               </li>
             ))}
@@ -124,7 +299,7 @@ const Portfolio: React.FC = () => {
           <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>
         </h2>
         <ul className="flex flex-wrap justify-start space-x-2 mb-4">
-          {['*', 'web-des', 'web-dev', 'dig-mar'].map((category) => (
+          {['*', 'web-des', 'web-dev', 'dig-mar', 'personal-pro'].map((category) => (
             <li key={category}>
               <button
                 onClick={() => setFilter(category)}
@@ -134,7 +309,15 @@ const Portfolio: React.FC = () => {
                     : 'bg-white text-gray-700 border border-[#FF6F61]'
                 } rounded-md transition-colors duration-200`}
               >
-                {category === '*' ? 'All' : category === 'web-des' ? 'Design' : category === 'web-dev' ? 'Dev' : 'Digital Marketing'}
+                {category === '*'
+                  ? 'All'
+                  : category === 'web-des'
+                    ? 'Design'
+                    : category === 'web-dev'
+                      ? 'Dev'
+                      : category === 'dig-mar'
+                        ? 'Digital Marketing'
+                        : 'Personal Projects'}
               </button>
             </li>
           ))}
@@ -156,10 +339,8 @@ const Portfolio: React.FC = () => {
           prevImage={prevImage}
           showLeftArrow={showLeftArrow}
           showRightArrow={showRightArrow}
-          showCloseButton={showCloseButton}
           setShowLeftArrow={setShowLeftArrow}
           setShowRightArrow={setShowRightArrow}
-          setShowCloseButton={setShowCloseButton}
         />
       )}
     </>
@@ -167,13 +348,19 @@ const Portfolio: React.FC = () => {
 };
 
 const ProjectItem: React.FC<{ item: Project; index: number; openGallery: (index: number) => void }> = ({ item, index, openGallery }) => (
-  <div className="bg-white rounded-lg shadow-md overflow-hidden">
-    <div className="relative group">
-      <img
-        src={item.image}
-        alt={item.title}
-        className="w-full h-48 object-cover transition-opacity duration-300 group-hover:opacity-30"
-      />
+  <div className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+    <div className="relative group aspect-[4/3] bg-gradient-to-br from-[#fff7f5] via-white to-[#f7f7f7] p-4">
+      <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-md bg-white shadow-[inset_0_0_0_1px_rgba(229,231,235,0.9)]">
+        <img
+          src={item.image}
+          alt={item.title}
+          onError={(event) => {
+            event.currentTarget.src = '/review-1.jpg';
+          }}
+          className="h-full w-full object-contain object-center transition-transform duration-300 group-hover:scale-[1.02]"
+        />
+      </div>
+      <div className="absolute inset-0 bg-[#222222]/0 transition-colors duration-300 group-hover:bg-[#222222]/15"></div>
       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <button
           onClick={() => openGallery(index)}
@@ -206,10 +393,8 @@ const GalleryPopup: React.FC<{
   prevImage: () => void;
   showLeftArrow: boolean;
   showRightArrow: boolean;
-  showCloseButton: boolean;
   setShowLeftArrow: (show: boolean) => void;
   setShowRightArrow: (show: boolean) => void;
-  setShowCloseButton: (show: boolean) => void;
 }> = ({
   projects,
   currentImageIndex,
@@ -218,23 +403,32 @@ const GalleryPopup: React.FC<{
   prevImage,
   showLeftArrow,
   showRightArrow,
-  showCloseButton,
   setShowLeftArrow,
   setShowRightArrow,
-  setShowCloseButton,
 }) => (
   <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+    {projects[currentImageIndex] && (
     <div 
-      className="max-w-xl w-full mx-4 relative"
-      onMouseEnter={() => setShowCloseButton(true)}
-      onMouseLeave={() => setShowCloseButton(false)}
+      className="max-w-5xl w-full mx-3 sm:mx-6 lg:mx-8 relative max-h-[90vh] overflow-y-auto rounded-md"
     >
+      <button
+        onClick={closeGallery}
+        aria-label="Close project details"
+        className="sticky top-3 ml-auto mr-3 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#222222] shadow-lg ring-1 ring-gray-300 transition-colors duration-200 hover:bg-[#FF6F61] hover:text-white"
+      >
+        <X size={22} />
+      </button>
       <div className="relative">
-        <img 
-          src={projects[currentImageIndex].image} 
-          alt={projects[currentImageIndex].title} 
-          className="w-full h-auto border-4 border-white" 
-        />
+        <div className="w-full bg-[#f7f7f7] border-4 border-white rounded-t-md overflow-hidden">
+          <img
+            src={projects[currentImageIndex].image}
+            alt={projects[currentImageIndex].title}
+            onError={(event) => {
+              event.currentTarget.src = '/review-1.jpg';
+            }}
+            className="w-full h-auto block"
+          />
+        </div>
         <div 
           className="absolute top-0 left-0 w-1/2 h-full"
           onMouseEnter={() => setShowLeftArrow(true)}
@@ -264,19 +458,55 @@ const GalleryPopup: React.FC<{
           )}
         </div>
       </div>
-      <div className="bg-white p-4">
-        <h3 className="text-xl font-semibold">{projects[currentImageIndex].title}</h3>
-        <p className="text-gray-600">{projects[currentImageIndex].type}</p>
+      <div className="bg-white p-4 sm:p-6 rounded-b-md">
+        <h3 className="text-xl sm:text-2xl font-semibold text-[#222222]">{projects[currentImageIndex].title}</h3>
+        <p className="text-gray-600 mt-1">{projects[currentImageIndex].type}</p>
+
+        <div className="mt-5 space-y-4">
+          <div className="bg-gray-50 border border-gray-200 rounded-md p-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-[#FF6F61]">Purpose</h4>
+            <p className="mt-2 text-sm sm:text-base text-gray-700 leading-relaxed">
+              {projects[currentImageIndex].purpose}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-gray-50 border border-gray-200 rounded-md p-4">
+              <h4 className="text-sm font-semibold uppercase tracking-wide text-[#FF6F61]">Features Implemented</h4>
+              <ul className="mt-2 text-sm sm:text-base text-gray-700 list-disc list-inside space-y-1">
+                {projects[currentImageIndex].features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-gray-50 border border-gray-200 rounded-md p-4">
+              <h4 className="text-sm font-semibold uppercase tracking-wide text-[#FF6F61]">Technologies Used</h4>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {projects[currentImageIndex].technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs sm:text-sm px-2.5 py-1 rounded-full bg-white border border-[#FF6F61] text-[#222222]"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 border border-gray-200 rounded-md p-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-[#FF6F61]">My Contributions</h4>
+            <ul className="mt-2 text-sm sm:text-base text-gray-700 list-disc list-inside space-y-1">
+              {projects[currentImageIndex].contributions.map((contribution) => (
+                <li key={contribution}>{contribution}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-      {showCloseButton && (
-        <button
-          onClick={closeGallery}
-          className="absolute -top-6 right-3 transform translate-x-1/2 -translate-y-1/2 text-white p-2 transition-all duration-300"
-        >
-          <X size={40} />
-        </button>
-      )}
     </div>
+    )}
   </div>
 );
 
