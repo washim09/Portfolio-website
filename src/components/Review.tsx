@@ -83,9 +83,9 @@ const Review = () => {
   return (
     <>
       {/* Desktop View */}
-      <div className="bg-white ml-96 mt-10 w-[850px] px-8 text-[#222222] hidden lg:block">
+      <div className="bg-white ml-[21rem] mr-8 mt-10 px-8 text-[#222222] hidden lg:block">
         <div 
-          className="px-8 py-16 relative" 
+          className="relative py-16" 
           style={{backgroundImage: "url('./quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom'}}
         >
           <h2 className="text-4xl font-bold mb-8 relative inline-block">
@@ -97,9 +97,9 @@ const Review = () => {
       </div>
 
       {/* Tablet View */}
-      <div className="bg-white ml-20 mt-5 w-[668px] px-8 text-[#222222] hidden md:block lg:hidden">
+      <div className="bg-white ml-20 mr-5 mt-5 px-8 text-[#222222] hidden md:block lg:hidden">
         <div 
-          className="px-6 py-12 relative" 
+          className="relative py-12" 
           style={{backgroundImage: "url('./quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom', backgroundSize: '100px'}}
         >
           <h2 className="text-3xl font-bold mb-6 relative inline-block">
@@ -116,9 +116,9 @@ const Review = () => {
           className="py-8 relative" 
           style={{backgroundImage: "url('./quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom', backgroundSize: '80px'}}
         >
-          <h2 className="text-xl font-bold mb-4 relative inline-block">
+          <h2 className="text-2xl font-bold mb-5 relative inline-block">
             Review
-            <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>
+            <span className="absolute left-0 h-0.5 w-12 top-8 bg-[#FF6F61]"></span>
           </h2>
           <ReviewContent />
         </div>

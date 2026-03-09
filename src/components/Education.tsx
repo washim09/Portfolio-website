@@ -76,7 +76,7 @@ const Education = () => {
   return (
     <>
       {/* Desktop View */}
-      <div className="bg-white ml-96 mt-10 w-[850px] py-16 px-8 text-[#222222] hidden lg:block">
+      <div className="bg-white ml-[21rem] mr-8 mt-10 py-16 px-8 text-[#222222] hidden lg:block">
         <h2 className="text-4xl font-bold mb-8 relative inline-block">
           Education
           <span className="absolute left-0 w-1/4 h-1 top-12 bg-[#FF6F61]"></span>
@@ -89,7 +89,7 @@ const Education = () => {
       </div>
 
       {/* Tablet View */}
-      <div className="bg-white ml-20 mt-5 w-[668px] py-16 px-8 text-[#222222] hidden md:block lg:hidden">
+      <div className="bg-white ml-20 mr-5 mt-5 py-16 px-8 text-[#222222] hidden md:block lg:hidden">
         <h2 className="text-3xl font-bold mb-8 relative inline-block">
           Education
           <span className="absolute left-0 w-1/4 h-1 top-10 bg-[#FF6F61]"></span>

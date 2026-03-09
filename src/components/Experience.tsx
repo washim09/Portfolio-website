@@ -32,10 +32,10 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ startDate, endDate, com
       <span className="text-sm mb-2 block">
         {startDate} <i className="text-[#FF6F61]">to</i> {endDate}
       </span>
-      <h3 className="text-xl font-bold mb-1">{company}</h3>
-      <h4 className="text-gray-600 italic mb-1">{location}</h4>
-      <h5 className="text-lg font-semibold mb-2">{position}</h5>
-      <p className="text-sm">{description}</p>
+      <h3 className="mb-1 text-lg font-semibold md:text-xl md:font-bold">{company}</h3>
+      <h4 className="mb-1 text-sm italic text-gray-600 md:text-base">{location}</h4>
+      <h5 className="mb-2 text-base font-semibold md:text-lg">{position}</h5>
+      <p className="text-sm leading-7">{description}</p>
       <div className="absolute w-full h-[1px] bg-[#FF6F61] bottom-0 left-0"></div>
     </div>
   );
@@ -88,7 +88,7 @@ const Experience = () => {
   return (
     <>
       {/* Desktop View */}
-      <div className="bg-white ml-96 mt-10 w-[850px] py-16 px-8 text-[#222222] hidden lg:block">
+      <div className="bg-white ml-[21rem] mr-8 mt-10 py-16 px-8 text-[#222222] hidden lg:block">
         <h2 className="text-4xl font-bold mb-8 relative inline-block">
           Experience
           <span className="absolute left-0 w-1/4 h-1 top-12 bg-[#FF6F61]"></span>
@@ -101,7 +101,7 @@ const Experience = () => {
       </div>
 
       {/* Tablet View */}
-      <div className="bg-white ml-20 mt-5 w-[668px] py-16 px-8 text-[#222222] hidden md:block lg:hidden">
+      <div className="bg-white ml-20 mr-5 mt-5 py-16 px-8 text-[#222222] hidden md:block lg:hidden">
         <h2 className="text-3xl font-bold mb-8 relative inline-block">
           Experience
           <span className="absolute left-0 w-1/4 h-1 top-10 bg-[#FF6F61]"></span>
@@ -115,9 +115,9 @@ const Experience = () => {
 
       {/* Mobile View */}
       <div className="bg-white md:hidden mt-4 mx-4 w-[calc(100%-2rem)] py-4 px-4 text-[#222222]">
-        <h2 className="text-xl font-bold mb-4 relative inline-block">
+        <h2 className="text-2xl font-bold mb-5 relative inline-block">
           Experience
-          <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>
+          <span className="absolute left-0 h-0.5 w-12 top-8 bg-[#FF6F61]"></span>
         </h2>
         <div className="grid grid-cols-1 gap-4">
           {experienceData.map((item, index) => (

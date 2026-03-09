@@ -81,11 +81,11 @@ const FooterContent: React.FC<{ compact?: boolean }> = ({ compact = false }) => 
         className={`flex ${
           compact
             ? 'flex-col gap-2 px-5 py-4 text-center'
-            : 'flex-col gap-3 px-8 py-4 text-left md:flex-row md:items-center md:justify-between'
+            : '-mt-1 min-h-16 flex-col gap-3 px-8 text-left md:flex-row md:items-center md:justify-between'
         } border-t border-white/10 text-sm text-slate-400`}
       >
         <p>&copy; {year} Washim Akram</p>
-        <p>Frontend Developer | Software Developer</p>
+        <p>Frontend Developer | Full-Stack Developer</p>
       </div>
     </div>
   );
@@ -94,11 +94,11 @@ const FooterContent: React.FC<{ compact?: boolean }> = ({ compact = false }) => 
 const Footer: React.FC = () => {
   return (
     <>
-      <footer className="ml-96 w-[850px] hidden lg:block">
+      <footer className="ml-[21rem] mr-8 hidden lg:block">
         <FooterContent />
       </footer>
 
-      <footer className="ml-20 w-[668px] hidden md:block lg:hidden">
+      <footer className="ml-20 mr-5 hidden md:block lg:hidden">
         <FooterContent compact />
       </footer>
 

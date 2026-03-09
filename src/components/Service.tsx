@@ -5,8 +5,8 @@ const ServiceItem = ({ Icon, title, description }: { Icon: any, title: string, d
   <div className="w-full md:w-1/2 mb-8 px-4">
     <div className="relative w-full">
       <Icon className="text-[#FF6F61] mb-4" size={30} />
-      <h3 className="text-xl font-bold tracking-wider mb-1">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
+      <h3 className="mb-2 text-lg font-semibold tracking-wide md:text-xl md:font-bold">{title}</h3>
+      <p className="text-sm leading-7 text-gray-600">{description}</p>
     </div>
   </div>
 );
@@ -38,7 +38,7 @@ const Service = () => {
   return (
     <>
       {/* Desktop View */}
-      <div className="bg-white ml-96 mt-10 w-[850px] py-16 px-8 text-[#222222] hidden lg:block">
+      <div className="bg-white ml-[21rem] mr-8 mt-10 py-16 px-8 text-[#222222] hidden lg:block">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8 relative inline-block">
             Service
@@ -53,7 +53,7 @@ const Service = () => {
       </div>
 
       {/* Tablet View */}
-      <div className="bg-white ml-20 mt-5 w-[668px] py-16 px-8 text-[#222222] hidden md:block lg:hidden">
+      <div className="bg-white ml-20 mr-5 mt-5 py-16 px-8 text-[#222222] hidden md:block lg:hidden">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 relative inline-block">
             Service
@@ -69,9 +69,9 @@ const Service = () => {
 
       {/* Mobile View */}
       <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 py-4 px-4 text-[#222222]">
-        <h2 className="text-xl font-bold mb-4 relative inline-block">
+        <h2 className="text-2xl font-bold mb-5 relative inline-block">
           Service
-          <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>
+          <span className="absolute left-0 h-0.5 w-12 top-8 bg-[#FF6F61]"></span>
         </h2>
         <div className="flex flex-wrap -mx-2 items-center">
           {services.map((service, index) => (

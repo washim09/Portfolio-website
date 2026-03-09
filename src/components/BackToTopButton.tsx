@@ -29,8 +29,8 @@ const BackToTopButton: React.FC = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 z-50 text-white
-                     right-[-3px] lg:right-2
+          className="fixed bottom-8 z-50 text-white
+                     -right-1 md:-right-1 lg:right-0.5 lg:bottom-10
                      transition-all duration-300 ease-in-out
                      hover:scale-110
                      animate-jump

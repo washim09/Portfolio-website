@@ -14,6 +14,13 @@ interface Project {
   contributions: string[];
 }
 
+interface PortfolioCategory {
+  value: string;
+  label: string;
+  mobileLabel: string;
+  mobileClassName?: string;
+}
+
 const portfolioItems: Project[] = [
   {
     id: 1,
@@ -178,6 +185,14 @@ const portfolioItems: Project[] = [
   },
 ];
 
+const portfolioCategories: PortfolioCategory[] = [
+  { value: '*', label: 'All', mobileLabel: 'All' },
+  { value: 'web-dev', label: 'Dev', mobileLabel: 'Dev' },
+  { value: 'web-des', label: 'Design', mobileLabel: 'Design' },
+  { value: 'dig-mar', label: 'Digital Marketing', mobileLabel: 'Digital Marketing' },
+  { value: 'personal-pro', label: 'Personal Project', mobileLabel: 'Personal Project', mobileClassName: 'ml-[3rem]' },
+];
+
 const Portfolio: React.FC = () => {
   const [filter, setFilter] = useState<string>('*');
   const [projects, setProjects] = useState<Project[]>([]);
@@ -215,32 +230,24 @@ const Portfolio: React.FC = () => {
   return (
     <>
       {/* Desktop View */}
-      <div className="bg-white ml-96 mt-10 w-[850px] py-16 px-8 text-[#222222] hidden lg:block">
+      <div className="bg-white ml-[21rem] mr-8 mt-10 py-16 px-8 text-[#222222] hidden lg:block">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-8 relative inline-block">
             Portfolio
             <span className="absolute left-0 w-1/4 h-1 top-12 bg-[#FF6F61]"></span>
           </h2>
           <ul className="flex justify-start space-x-4 mb-8">
-            {['*', 'web-des', 'web-dev', 'dig-mar', 'personal-pro'].map((category) => (
-              <li key={category}>
+            {portfolioCategories.map((category) => (
+              <li key={category.value}>
                 <button
-                  onClick={() => setFilter(category)}
+                  onClick={() => setFilter(category.value)}
                   className={`px-6 py-2 text-sm font-medium ${
-                    filter === category
+                    filter === category.value
                       ? 'bg-[#FF6F61] text-white'
                       : 'bg-white text-gray-700 border border-[#FF6F61]'
                   } rounded-md transition-colors duration-200`}
                 >
-                  {category === '*'
-                    ? 'All'
-                    : category === 'web-des'
-                      ? 'Design'
-                      : category === 'web-dev'
-                        ? 'Development'
-                        : category === 'dig-mar'
-                          ? 'Digital Marketing'
-                          : 'Personal Projects'}
+                  {category.label}
                 </button>
               </li>
             ))}
@@ -254,32 +261,24 @@ const Portfolio: React.FC = () => {
       </div>
 
       {/* Tablet View */}
-      <div className="bg-white ml-20 mt-5 w-[668px] py-16 px-8 text-[#222222] hidden md:block lg:hidden">
+      <div className="bg-white ml-20 mr-5 mt-5 py-16 px-8 text-[#222222] hidden md:block lg:hidden">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 relative inline-block">
             Portfolio
             <span className="absolute left-0 w-1/4 h-1 top-10 bg-[#FF6F61]"></span>
           </h2>
-          <ul className="flex flex-wrap justify-start space-x-2 space-y-2 mb-8">
-            {['*', 'web-des', 'web-dev', 'dig-mar', 'personal-pro'].map((category) => (
-              <li key={category}>
+          <ul className="mb-8 flex flex-wrap items-center gap-3">
+            {portfolioCategories.map((category) => (
+              <li key={category.value}>
                 <button
-                  onClick={() => setFilter(category)}
+                  onClick={() => setFilter(category.value)}
                   className={`px-4 py-2 text-sm font-medium ${
-                    filter === category
+                    filter === category.value
                       ? 'bg-[#FF6F61] text-white'
                       : 'bg-white text-gray-700 border border-[#FF6F61]'
                   } rounded-md transition-colors duration-200`}
                 >
-                  {category === '*'
-                    ? 'All'
-                    : category === 'web-des'
-                      ? 'Design'
-                      : category === 'web-dev'
-                        ? 'Development'
-                        : category === 'dig-mar'
-                          ? 'Digital Marketing'
-                          : 'Personal Projects'}
+                  {category.label}
                 </button>
               </li>
             ))}
@@ -294,30 +293,22 @@ const Portfolio: React.FC = () => {
 
       {/* Mobile View */}
       <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 py-4 px-4 text-[#222222]">
-        <h2 className="text-xl font-bold mb-4 relative inline-block">
+        <h2 className="text-2xl font-bold mb-5 relative inline-block">
           Portfolio
-          <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>
+          <span className="absolute left-0 h-0.5 w-12 top-8 bg-[#FF6F61]"></span>
         </h2>
-        <ul className="flex flex-wrap justify-start space-x-2 mb-4">
-          {['*', 'web-des', 'web-dev', 'dig-mar', 'personal-pro'].map((category) => (
-            <li key={category}>
+        <ul className="mb-5 flex flex-wrap gap-2">
+          {portfolioCategories.map((category) => (
+            <li key={category.value} className={category.mobileClassName}>
               <button
-                onClick={() => setFilter(category)}
-                className={`px-2 py-1 text-xs font-medium ${
-                  filter === category
-                    ? 'bg-[#FF6F61] text-white'
-                    : 'bg-white text-gray-700 border border-[#FF6F61]'
-                } rounded-md transition-colors duration-200`}
+                onClick={() => setFilter(category.value)}
+                className={`rounded-md border px-3 py-1.5 text-xs font-medium transition-colors duration-200 ${
+                  filter === category.value
+                    ? 'border-[#FF6F61] bg-[#FF6F61] text-white'
+                    : 'border-[#FF6F61] bg-white text-gray-700'
+                }`}
               >
-                {category === '*'
-                  ? 'All'
-                  : category === 'web-des'
-                    ? 'Design'
-                    : category === 'web-dev'
-                      ? 'Dev'
-                      : category === 'dig-mar'
-                        ? 'Digital Marketing'
-                        : 'Personal Projects'}
+                {category.mobileLabel}
               </button>
             </li>
           ))}

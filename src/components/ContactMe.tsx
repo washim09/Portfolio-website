@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import {
-  User, Tag, Mail, Phone, MapPin, Twitter, Facebook, Linkedin, Github, Youtube, 
+  User, Tag, Mail, Phone, MapPin, Facebook, Youtube,
 } from 'lucide-react';
 
 interface FormData {
@@ -77,7 +77,7 @@ const ContactMe: React.FC = () => {
   return (
     <>
       {/* Desktop View */}
-      <div className="bg-white ml-96 mt-10 w-[850px] py-16 px-8 text-[#222222] hidden lg:block">
+      <div className="bg-white ml-[21rem] mr-8 mt-10 py-16 px-8 text-[#222222] hidden lg:block">
         <h2 className="text-4xl font-bold mb-8 relative inline-block">
           Contact
           <span className="absolute left-0 w-1/4 h-1 top-12 bg-[#FF6F61]" />
@@ -99,7 +99,7 @@ const ContactMe: React.FC = () => {
       </div>
 
       {/* Tablet View */}
-      <div className="bg-white ml-20 mt-5 w-[668px] py-12 px-6 text-[#222222] hidden md:block lg:hidden">
+      <div className="bg-white ml-20 mr-5 mt-5 py-12 px-6 text-[#222222] hidden md:block lg:hidden">
         <h2 className="text-3xl font-bold mb-8 relative inline-block">
           Contact
           <span className="absolute left-0 w-1/4 h-1 top-10 bg-[#FF6F61]" />
@@ -122,9 +122,9 @@ const ContactMe: React.FC = () => {
 
       {/* Mobile View */}
       <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 py-4 px-4 text-[#222222]">
-        <h2 className="text-xl font-bold mb-4 relative inline-block">
+        <h2 className="text-2xl font-bold mb-5 relative inline-block">
           Contact
-          <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]" />
+          <span className="absolute left-0 h-0.5 w-12 top-8 bg-[#FF6F61]" />
         </h2>
         <div className="flex flex-col">
           <div className="mb-6">
@@ -145,6 +145,12 @@ const ContactMe: React.FC = () => {
   );
 };
 
+const XLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+    <path d="M18.901 2H21.9l-6.548 7.484L23 22h-5.978l-4.682-6.87L6.33 22H3.329l7-8.001L1 2h6.13l4.232 6.274L18.901 2Zm-1.052 18h1.662L6.227 3.895H4.444L17.849 20Z" />
+  </svg>
+);
+
 const ContactInfo: React.FC = () => (
   <div>
     <div className="contact-info">
@@ -154,7 +160,7 @@ const ContactInfo: React.FC = () => (
       </p>
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <Tag className="w-6 h-6 mr-3 text-[#FF6F61]" />
-        Web Developer & Software Developer
+        Frontend Developer & Full-Stack Developer
       </p>
       <p className="flex items-center mb-3 text-base font-semibold tracking-wide">
         <Mail className="w-6 h-6 mr-3 text-[#FF6F61]" />
@@ -180,7 +186,7 @@ const ContactInfo: React.FC = () => (
         rel="noopener noreferrer"
         className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
       >
-        <Twitter className="w-full h-full p-2" />
+        <XLogo className="w-full h-full p-2" />
       </a>
       <a
         href="#"
@@ -189,22 +195,6 @@ const ContactInfo: React.FC = () => (
         className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
       >
         <Facebook className="w-full h-full p-2" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/washim-akram-frontend-developer/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
-      >
-        <Linkedin className="w-full h-full p-2" />
-      </a>
-      <a
-        href="https://github.com/washim09"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
-      >
-        <Github className="w-full h-full p-2" />
       </a>
       <a
         href="#"

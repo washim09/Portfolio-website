@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import AboutMe from './components/AboutMe';
@@ -9,6 +9,22 @@ import Portfolio from './components/Portfolio';
 import ContactMe from './components/ContactMe';
 import Footer from './components/Footer';
 import BackToTopButton from './components/BackToTopButton';
+
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+const MobileRouteOffset: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <div className="pt-16 md:pt-0">
+    {children}
+  </div>
+);
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -80,6 +96,7 @@ const App: React.FC = () => {
         }
       `}</style>
       <Router>
+        <ScrollToTop />
         <div className="flex relative min-h-screen bg-gray-900 w-full max-w-full overflow-x-hidden">
           <div className="noise-wrapper absolute inset-0 opacity-0 overflow-hidden transition-opacity duration-500 z-10">
             <div className="noise absolute inset-[-500px] bg-[url('/noise_black.png')] bg-repeat opacity-35 animate-noise"></div>
@@ -88,11 +105,11 @@ const App: React.FC = () => {
             <Sidebar />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/about" element={<AboutMe />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/service" element={<Service />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/contactme" element={<ContactMe />} />
+              <Route path="/about" element={<MobileRouteOffset><AboutMe /></MobileRouteOffset>} />
+              <Route path="/experience" element={<MobileRouteOffset><Experience /></MobileRouteOffset>} />
+              <Route path="/service" element={<MobileRouteOffset><Service /></MobileRouteOffset>} />
+              <Route path="/portfolio" element={<MobileRouteOffset><Portfolio /></MobileRouteOffset>} />
+              <Route path="/contactme" element={<MobileRouteOffset><ContactMe /></MobileRouteOffset>} />
             </Routes>
             <Footer />
             <BackToTopButton />

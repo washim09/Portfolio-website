@@ -44,34 +44,44 @@ const Sidebar: React.FC = () => {
   return (
     <>
       {/* Mobile View */}
-      <div className="fixed top-0 left-0 w-full bg-gray-800 text-white md:hidden z-50">
+      <div className="fixed top-0 left-0 w-full bg-white text-[#222222] md:hidden z-50">
         {/* Always visible navigation bar */}
-        <div className="flex items-center justify-between p-4">
-          <button className="text-white focus:outline-none" onClick={toggleSidebar}>
+        <div className="flex items-center justify-between border-b border-gray-200 p-4">
+          <button className="text-[#222222] focus:outline-none" onClick={toggleSidebar}>
             <FontAwesomeIcon icon={faBars} size="2x" />
           </button>
         </div>
 
         {/* Dropdown menu */}
         <div
-          className={`absolute top-0 left-0 w-full bg-gray-800 transition-all duration-300 ease-in-out transform ${
+          className={`absolute top-0 left-0 w-full bg-white transition-all duration-300 ease-in-out transform ${
             isOpen ? 'translate-y-0' : '-translate-y-full'
           }`}
         >
           {/* Navigation header within the dropdown */}
-          <div className="flex items-center justify-end p-4">
-            <button className="text-white focus:outline-none right-10" onClick={toggleSidebar}>
+          <div className="flex items-center justify-between border-b border-gray-200 px-4 pt-3">
+            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl bg-white">
+              <img
+                src="/my-pic-white-background.png"
+                alt="Profile"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <button
+              className="flex h-16 w-16 items-center justify-center self-center text-[#222222] leading-none focus:outline-none"
+              onClick={toggleSidebar}
+            >
               <FontAwesomeIcon icon={faTimes} size="2x" />
             </button>
           </div>
 
           {/* Navigation items */}
-          <nav className="mt-4">
+          <nav className="mt-2">
             <ul>
               {navItems.map((item, index) => (
                 <li
                   key={item.name}
-                  className="border-t border-gray-600"
+                  className={index === 0 ? "" : "border-t border-gray-200"}
                   style={{
                     transitionDelay: `${index * 50}ms`,
                     opacity: isOpen ? 1 : 0,
@@ -81,13 +91,24 @@ const Sidebar: React.FC = () => {
                 >
                   <Link
                     to={item.href}
-                    className={`flex items-center px-4 py-2 ${
-                      location.pathname === item.href ? 'text-red-500' : 'text-white'
+                    className={`group flex items-center px-4 py-2 transition-colors duration-300 ${
+                      location.pathname === item.href
+                        ? 'text-red-500'
+                        : 'text-[#222222] hover:bg-gray-700 hover:text-red-500'
                     }`}
                     onClick={toggleSidebar}
                   >
                     {item.name}
-                    <FontAwesomeIcon icon={item.icon} className={`ml-auto ${item.iconClass}`} />
+                    <FontAwesomeIcon
+                      icon={item.icon}
+                      className={`ml-auto transition-colors duration-300 ${
+                        location.pathname === item.href
+                          ? 'text-[#222222]'
+                          : item.name === 'Home'
+                            ? 'text-[#222222] group-hover:text-white'
+                            : 'text-red-500 group-hover:text-white'
+                      }`}
+                    />
                   </Link>
                 </li>
               ))}
@@ -119,13 +140,17 @@ const Sidebar: React.FC = () => {
                 <li key={item.name} className="mb-2">
                   <Link
                     to={item.href}
-                    className={`flex items-center px-4 py-2 ${
-                      location.pathname === item.href ? 'text-red-500' : 'text-white hover:bg-gray-700'
+                    className={`group flex items-center px-4 py-2 ${
+                      location.pathname === item.href
+                        ? 'bg-gray-700/60 text-red-500'
+                        : 'text-white hover:bg-gray-700 hover:text-red-500'
                     } transition-all duration-300 ease-in-out`}
                   >
                     <FontAwesomeIcon 
                       icon={item.icon} 
-                      className={`${item.iconClass} ${isHovered ? 'w-6 mr-4' : 'w-full'}`} 
+                      className={`transition-colors duration-300 ${
+                        location.pathname === item.href ? 'text-white' : 'text-red-500 group-hover:text-white'
+                      } ${isHovered ? 'w-6 mr-4' : 'w-full'}`} 
                     />
                     {isHovered && (
                       <span className="flex-grow text-right">{index === 0 ? 'Home' : item.name}</span>
@@ -154,7 +179,7 @@ const Sidebar: React.FC = () => {
       </div>
 
       {/* Desktop Sidebar */}
-      <div className="hidden lg:block fixed inset-y-0 left-16 w-72 bg-white">
+      <div className="hidden lg:block fixed inset-y-0 left-8 w-72 bg-white">
         <div className="w-full h-52 overflow-hidden flex items-center justify-center border-b border-gray-200">
           <img
             src="/my-pic-white-background.png"
@@ -168,18 +193,18 @@ const Sidebar: React.FC = () => {
               <li key={item.name} className={index !== 0 ? "border-t border-gray-600 w-full" : ""}>
                 <Link
                   to={item.href}
-                  className={`flex items-center px-4 py-2 group ${
+                  className={`group flex items-center px-4 py-2 ${
                     location.pathname === item.href
                       ? "text-red-500"
-                      : "text-gray-900 hover:bg-gray-700 hover:text-white"
-                  }`}
+                      : "text-gray-900 hover:bg-gray-700 hover:text-red-500"
+                  } transition-colors duration-300`}
                 >
                   <FontAwesomeIcon
                     icon={item.icon}
-                    className={`mr-auto ${
+                    className={`mr-auto transition-colors duration-300 ${
                       location.pathname === item.href
                         ? "text-gray-900"
-                        : "group-hover:text-red-500"
+                        : "text-red-500 group-hover:text-white"
                     }`}
                   />
                   {item.name}

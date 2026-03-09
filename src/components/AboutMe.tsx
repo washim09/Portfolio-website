@@ -28,7 +28,7 @@ const AboutMe = () => {
   return (
     <>
       {/* Desktop View */}
-      <div className="bg-white ml-96 mt-10 w-[850px] py-16 px-8 text-[#222222] hidden lg:block">
+      <div className="bg-white ml-[21rem] mr-8 mt-10 py-16 px-8 text-[#222222] hidden lg:block">
         <h2 className="text-4xl font-bold mb-8 relative inline-block">
           About Me
           <span className="absolute left-0 w-1/4 h-1 top-12 bg-[#FF6F61]"></span>
@@ -76,18 +76,24 @@ const AboutMe = () => {
       </div>
 
       {/* Tablet View */}
-      <div className="bg-white ml-20 mt-5 w-[668px] py-16 px-8 text-[#222222] hidden md:block lg:hidden">
+      <div className="bg-white ml-20 mr-5 mt-5 py-16 px-8 text-[#222222] hidden md:block lg:hidden">
         <h2 className="text-3xl font-bold mb-8 relative inline-block">
           About Me
           <span className="absolute left-0 w-1/4 h-1 top-10 bg-[#FF6F61]"></span>
         </h2>
         
-        <div className="flex">
-          <div className="w-2/5 pr-4">
-            <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80" />
+        <div className="flex items-start gap-6">
+          <div className="w-2/5">
+            <video
+              src="./profile_animation.mp4"
+              autoPlay
+              loop
+              muted
+              className="h-[320px] w-full max-w-[250px] object-cover"
+            />
           </div>
-          <div className="w-3/5 mt-20">
-            <div className="mb-6 space-y-3 text-xs leading-relaxed">
+          <div className="w-3/5">
+            <div className="mb-6 space-y-4 text-sm leading-7 text-[#333333]">
               <p>
                 Hi, I am Washim Akram - a Full-Stack Developer who enjoys building complete, scalable web products from idea to deployment.
               </p>
@@ -105,7 +111,7 @@ const AboutMe = () => {
               </p>
               <p>Let us build something impactful.</p>
             </div>
-            <button className="bg-[#FF6F61] text-white text-sm px-4 py-2 mb-6 hover:bg-[#222222] transition duration-300">
+            <button className="mb-6 bg-[#FF6F61] px-5 py-2 text-sm text-white transition duration-300 hover:bg-[#222222]">
               Hire Me
             </button>
           </div>
@@ -125,12 +131,12 @@ const AboutMe = () => {
 
       {/* Mobile View */}
       <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 py-4 px-4 text-[#222222]">
-        <h2 className="text-xl font-bold mb-4 relative inline-block">
+        <h2 className="text-2xl font-bold mb-5 relative inline-block">
           About Me
-          <span className="absolute left-0 w-1/4 h-0.5 top-7 bg-[#FF6F61]"></span>
+          <span className="absolute left-0 h-0.5 w-12 top-8 bg-[#FF6F61]"></span>
         </h2>
         <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80 ml-4" />
-        <div className="mb-3 mt-3 space-y-3 text-xs leading-relaxed">
+        <div className="mb-3 mt-3 space-y-4 text-sm leading-7 text-[#333333]">
           <p>
             Hi, I am Washim Akram - a Full-Stack Developer who builds complete, scalable web products from idea to deployment.
           </p>
@@ -144,7 +150,7 @@ const AboutMe = () => {
             I am open to remote and freelance full-stack opportunities. Let us build something impactful.
           </p>
         </div>
-        <button className="bg-[#FF6F61] text-white text-xs px-3 py-1.5 mb-4 hover:bg-[#222222] transition duration-300">
+        <button className="mb-4 bg-[#FF6F61] px-4 py-2 text-sm text-white transition duration-300 hover:bg-[#222222]">
           Hire Me
         </button>
         <div>

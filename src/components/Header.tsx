@@ -61,7 +61,7 @@ const Header = () => {
     <>
       {/* Desktop View */}
       <div 
-        className="bg-white ml-96 w-[850px] h-[450px] mt-10 relative hidden lg:flex flex-col items-center justify-center"
+        className="bg-white ml-[21rem] mr-8 h-[450px] mt-10 relative hidden lg:flex flex-col items-center justify-center"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -74,7 +74,7 @@ const Header = () => {
             {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
           </button>
         )}
-        <div className="w-full h-full flex items-center justify-between px-8 pb-20 gap-10">
+        <div className="w-full h-full flex items-center justify-between px-8 pb-14 gap-10">
           <div className="flex flex-col items-start pl-28">
             <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
             <h1 className="text-gray-900 text-5xl font-bold mb-2">
@@ -84,7 +84,7 @@ const Header = () => {
               <span ref={typedRefDesktop}></span>
             </h2>
           </div>
-          <div className="flex-shrink-0 w-[240px] h-[310px] flex items-end justify-center">
+          <div className="flex-shrink-0 self-end w-[260px] h-[360px] flex items-end justify-center">
             <img
               src="/my-pic-white-background.png"
               alt="Washim Akram"
@@ -110,7 +110,7 @@ const Header = () => {
 
       {/* Tablet View */}
       <div 
-        className="bg-white ml-20 w-[668px] h-[350px] mt-10 relative hidden md:flex lg:hidden flex-col items-center justify-center"
+        className="bg-white ml-20 mr-5 h-[350px] mt-10 relative hidden md:flex lg:hidden flex-col items-center justify-center"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -123,14 +123,23 @@ const Header = () => {
             {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
           </button>
         )}
-        <div className="flex flex-col items-center text-center px-6">
-          <p className="text-red-500 text-lg font-semibold mb-2">I'm</p>
-          <h1 className="text-gray-900 text-4xl font-bold mb-2">
-            Washim Akram
-          </h1>
-          <h2 className="text-xl font-light text-gray-600">
-            <span ref={typedRefTablet}></span>
-          </h2>
+        <div className="w-full h-full flex items-center justify-between px-8 pb-12 gap-6">
+          <div className="flex flex-col items-start pl-10">
+            <p className="text-red-500 text-lg font-semibold mb-2">I'm</p>
+            <h1 className="text-gray-900 text-4xl font-bold mb-2">
+              Washim Akram
+            </h1>
+            <h2 className="text-xl font-light text-gray-600">
+              <span ref={typedRefTablet}></span>
+            </h2>
+          </div>
+          <div className="flex-shrink-0 self-end w-[180px] h-[250px] flex items-end justify-center">
+            <img
+              src="/my-pic-white-background.png"
+              alt="Washim Akram"
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
         </div>
         <div className="flex w-full absolute bottom-0">
           <a
