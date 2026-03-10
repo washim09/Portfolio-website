@@ -6,19 +6,19 @@ const reviews = [
     text: "At LDTtechnology, Washim Akram impressed us with their creativity and dedication, including building our website. His ability to solve problems and deliver results was truly remarkable. His contributions made a lasting impact, and I wish them success ahead.",
     name: "LDT Technologies Pvt. Ltd.",
     profession: "CEO & CO-FOUNDER, LDT Technologies Pvt. Ltd.",
-    image: "./review-1.jpg"
+    image: "/review-1.jpg"
   },
   {
     text: "Washim was key to many projects at Echrontech, known for their quality work, problem-solving skills, and leadership. They created a positive and collaborative environment, leaving a lasting impact. I highly recommend them for any future role.",
     name: "Echrontech Technology.",
     profession: "MD, Echrontech Technology.",
-    image: "./review-2.jpg"
+    image: "/review-2.jpg"
   },
   {
     text: "Working with Washim at Acnosoft was a pleasure, as they combined strong technical skills with a clear focus on client needs. They consistently delivered innovative solutions and elevated our team’s capabilities. I’m confident they’ll bring great value to any organization.",
     name: "Acnosoft Digital Marketing Agency",
     profession: "CEO, Acnosoft Digital Marketing Agency",
-    image: "./review-3.jpg"
+    image: "/review-3.jpg"
   }
 ];
 
@@ -54,7 +54,13 @@ const Review = () => {
           </p>
         </div>
         <div className="review-img flex items-center">
-          <img src={reviews[currentReview].image} alt="Reviewer" className="w-20 h-20 object-cover mr-4 lg:w-16 lg:h-16 md:w-14 md:h-14 mt-6" />
+          <img
+            src={reviews[currentReview].image}
+            alt={reviews[currentReview].name}
+            loading="lazy"
+            decoding="async"
+            className="w-20 h-20 object-cover mr-4 lg:w-16 lg:h-16 md:w-14 md:h-14 mt-6"
+          />
           <div className="review-name mt-6">
             <h3 className="text-lg font-bold tracking-wider mb-1 lg:text-base md:text-sm">{reviews[currentReview].name}</h3>
             <p className="text-sm lg:text-xs">{reviews[currentReview].profession}</p>
@@ -86,7 +92,7 @@ const Review = () => {
       <div className="bg-white ml-[21rem] mr-8 mt-10 px-8 text-[#222222] hidden lg:block">
         <div 
           className="relative py-16" 
-          style={{backgroundImage: "url('./quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom'}}
+          style={{backgroundImage: "url('/quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom'}}
         >
           <h2 className="text-4xl font-bold mb-8 relative inline-block">
             Review
@@ -100,7 +106,7 @@ const Review = () => {
       <div className="bg-white ml-20 mr-5 mt-5 px-8 text-[#222222] hidden md:block lg:hidden">
         <div 
           className="relative py-12" 
-          style={{backgroundImage: "url('./quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom', backgroundSize: '100px'}}
+          style={{backgroundImage: "url('/quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom', backgroundSize: '100px'}}
         >
           <h2 className="text-3xl font-bold mb-6 relative inline-block">
             Review
@@ -114,7 +120,7 @@ const Review = () => {
       <div className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-4 px-4 text-[#222222]">
         <div 
           className="py-8 relative" 
-          style={{backgroundImage: "url('./quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom', backgroundSize: '80px'}}
+          style={{backgroundImage: "url('/quote.png')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right bottom', backgroundSize: '80px'}}
         >
           <h2 className="text-2xl font-bold mb-5 relative inline-block">
             Review

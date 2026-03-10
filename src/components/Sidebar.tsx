@@ -62,7 +62,7 @@ const Sidebar: React.FC = () => {
           <div className="flex items-center justify-between border-b border-gray-200 px-4 pt-3">
             <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl bg-white">
               <img
-                src="/my-pic-white-background.png"
+                src="/my-pic-white-background.webp"
                 alt="Profile"
                 className="h-full w-full object-contain"
               />
@@ -128,7 +128,7 @@ const Sidebar: React.FC = () => {
           <div className="p-4">
             <div className="w-full h-36 overflow-hidden flex items-center justify-center">
               <img
-                src="/my-pic-white-background.png"
+                src="/my-pic-white-background.webp"
                 alt="Profile"
                 className="max-w-full max-h-full object-contain"
               />
@@ -182,7 +182,7 @@ const Sidebar: React.FC = () => {
       <div className="hidden lg:block fixed inset-y-0 left-8 w-72 bg-white">
         <div className="w-full h-52 overflow-hidden flex items-center justify-center border-b border-gray-200">
           <img
-            src="/my-pic-white-background.png"
+            src="/my-pic-white-background.webp"
             alt="Profile"
             className="max-w-full max-h-full object-contain"
           />

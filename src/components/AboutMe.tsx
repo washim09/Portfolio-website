@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SkillBar = ({ skill, percentage }: { skill: string; percentage: number }) => {
   const [width, setWidth] = useState(0);
@@ -25,6 +26,12 @@ const SkillBar = ({ skill, percentage }: { skill: string; percentage: number }) 
 };
 
 const AboutMe = () => {
+  const navigate = useNavigate();
+
+  const handleHireMe = () => {
+    navigate('/contactme');
+  };
+
   return (
     <>
       {/* Desktop View */}
@@ -36,7 +43,16 @@ const AboutMe = () => {
         
         <div className="flex">
           <div className="w-2/5 pr-8">
-            <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80" />
+            <video
+              src="/profile_animation_1.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              poster="/my-pic-white-background.webp"
+              className="w-80 h-80"
+            />
           </div>
           <div className="w-3/5 mt-0">
             <div className="mb-6 space-y-4 text-sm leading-relaxed">
@@ -57,7 +73,11 @@ const AboutMe = () => {
               </p>
               <p>Let us build something impactful.</p>
             </div>
-            <button className="bg-[#FF6F61] text-white px-6 py-2 mb-8 hover:bg-[#222222] transition duration-300">
+            <button
+              type="button"
+              onClick={handleHireMe}
+              className="bg-[#FF6F61] text-white px-6 py-2 mb-8 hover:bg-[#222222] transition duration-300"
+            >
               Hire Me
             </button>
           </div>
@@ -85,10 +105,13 @@ const AboutMe = () => {
         <div className="flex items-start gap-6">
           <div className="w-2/5">
             <video
-              src="./profile_animation.mp4"
+              src="/profile_animation_1.mp4"
               autoPlay
               loop
               muted
+              playsInline
+              preload="metadata"
+              poster="/my-pic-white-background.webp"
               className="h-[320px] w-full max-w-[250px] object-cover"
             />
           </div>
@@ -111,7 +134,11 @@ const AboutMe = () => {
               </p>
               <p>Let us build something impactful.</p>
             </div>
-            <button className="mb-6 bg-[#FF6F61] px-5 py-2 text-sm text-white transition duration-300 hover:bg-[#222222]">
+            <button
+              type="button"
+              onClick={handleHireMe}
+              className="mb-6 bg-[#FF6F61] px-5 py-2 text-sm text-white transition duration-300 hover:bg-[#222222]"
+            >
               Hire Me
             </button>
           </div>
@@ -135,7 +162,16 @@ const AboutMe = () => {
           About Me
           <span className="absolute left-0 h-0.5 w-12 top-8 bg-[#FF6F61]"></span>
         </h2>
-        <video src="./profile_animation.mp4" autoPlay loop muted className="w-80 h-80 ml-4" />
+        <video
+          src="/profile_animation_1.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/my-pic-white-background.webp"
+          className="w-80 h-80 ml-4"
+        />
         <div className="mb-3 mt-3 space-y-4 text-sm leading-7 text-[#333333]">
           <p>
             Hi, I am Washim Akram - a Full-Stack Developer who builds complete, scalable web products from idea to deployment.
@@ -150,7 +186,11 @@ const AboutMe = () => {
             I am open to remote and freelance full-stack opportunities. Let us build something impactful.
           </p>
         </div>
-        <button className="mb-4 bg-[#FF6F61] px-4 py-2 text-sm text-white transition duration-300 hover:bg-[#222222]">
+        <button
+          type="button"
+          onClick={handleHireMe}
+          className="mb-4 bg-[#FF6F61] px-4 py-2 text-sm text-white transition duration-300 hover:bg-[#222222]"
+        >
           Hire Me
         </button>
         <div>

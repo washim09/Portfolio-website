@@ -1,7 +1,15 @@
-import { Laptop, Search, Mail } from 'lucide-react';
-import { FiMonitor } from 'react-icons/fi';
+import { Laptop, Search, Mail, Monitor } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
-const ServiceItem = ({ Icon, title, description }: { Icon: any, title: string, description: string }) => (
+const ServiceItem = ({
+  Icon,
+  title,
+  description,
+}: {
+  Icon: LucideIcon;
+  title: string;
+  description: string;
+}) => (
   <div className="w-full md:w-1/2 mb-8 px-4">
     <div className="relative w-full">
       <Icon className="text-[#FF6F61] mb-4" size={30} />
@@ -14,7 +22,7 @@ const ServiceItem = ({ Icon, title, description }: { Icon: any, title: string, d
 const Service = () => {
   const services = [
     {
-      Icon: FiMonitor,
+      Icon: Monitor,
       title: "Web Design",
       description: "Designs engaging and user-centric web interfaces that balance aesthetics with functionality to provide an optimal user experience."
     },

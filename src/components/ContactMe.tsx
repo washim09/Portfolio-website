@@ -17,6 +17,12 @@ interface FormErrors {
   message?: string;
 }
 
+interface SocialLink {
+  label: string;
+  href?: string;
+  Icon: React.ComponentType<{ className?: string }>;
+}
+
 const ContactMe: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -151,6 +157,12 @@ const XLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   </svg>
 );
 
+const socialLinks: SocialLink[] = [
+  { label: 'X', href: import.meta.env.VITE_X_URL, Icon: XLogo },
+  { label: 'Facebook', href: import.meta.env.VITE_FACEBOOK_URL, Icon: Facebook },
+  { label: 'YouTube', href: import.meta.env.VITE_YOUTUBE_URL, Icon: Youtube },
+];
+
 const ContactInfo: React.FC = () => (
   <div>
     <div className="contact-info">
@@ -179,31 +191,30 @@ const ContactInfo: React.FC = () => (
         Inder Enclave Phase - 2, North west Delhi, Delhi - 110086
       </p>
     </div>
-    <div className="social mt-6 space-x-2">
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
-      >
-        <XLogo className="w-full h-full p-2" />
-      </a>
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
-      >
-        <Facebook className="w-full h-full p-2" />
-      </a>
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block w-8 h-8 bg-[#FF6F61] text-black hover:bg-black hover:text-[#FF6F61] transition-colors duration-300"
-      >
-        <Youtube className="w-full h-full p-2" />
-      </a>
+    <div className="social mt-6 flex gap-2">
+      {socialLinks.map(({ label, href, Icon }) =>
+        href ? (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            className="inline-block h-8 w-8 bg-[#FF6F61] text-black transition-colors duration-300 hover:bg-black hover:text-[#FF6F61]"
+          >
+            <Icon className="h-full w-full p-2" />
+          </a>
+        ) : (
+          <span
+            key={label}
+            aria-label={`${label} link not configured`}
+            className="inline-block h-8 w-8 cursor-default bg-[#FF6F61] text-black opacity-70"
+            title={`${label} link not configured`}
+          >
+            <Icon className="h-full w-full p-2" />
+          </span>
+        )
+      )}
     </div>
   </div>
 );

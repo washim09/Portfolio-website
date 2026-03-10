@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
-import { Volume2, VolumeX } from "lucide-react";
-import useSound from "use-sound";
+import { Download, Handshake, Volume2, VolumeX } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -9,13 +8,10 @@ const Header = () => {
   const typedRefDesktop = useRef(null);
   const typedRefMobile = useRef(null);
   const typedRefTablet = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMuteVisible, setIsMobileMuteVisible] = useState(false);
-  const [play, { stop }] = useSound("./static-noise.mp3", {
-    loop: true,
-    volume: 0.5,
-  });
 
   useEffect(() => {
     const options = {
@@ -42,15 +38,37 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    if (isMuted) {
-      stop();
-    } else {
-      play();
-    }
-  }, [isMuted, play, stop]);
+    const audio = new Audio("/static-noise.mp3");
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.preload = "none";
+    audioRef.current = audio;
 
-  const toggleMute = () => {
-    setIsMuted(!isMuted);
+    return () => {
+      audio.pause();
+      audioRef.current = null;
+    };
+  }, []);
+
+  const toggleMute = async () => {
+    const audio = audioRef.current;
+
+    if (!audio) {
+      return;
+    }
+
+    if (isMuted) {
+      try {
+        await audio.play();
+        setIsMuted(false);
+      } catch (error) {
+        console.error("Unable to play ambient audio:", error);
+      }
+      return;
+    }
+
+    audio.pause();
+    setIsMuted(true);
   };
 
   const handleHireMe = () => {
@@ -60,7 +78,7 @@ const Header = () => {
   return (
     <>
       {/* Desktop View */}
-      <div 
+      <div
         className="bg-white ml-[21rem] mr-8 h-[450px] mt-10 relative hidden lg:flex flex-col items-center justify-center"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -86,30 +104,34 @@ const Header = () => {
           </div>
           <div className="flex-shrink-0 self-end w-[260px] h-[360px] flex items-end justify-center">
             <img
-              src="/my-pic-white-background.png"
+              src="/my-pic-white-background.webp"
               alt="Washim Akram"
+              decoding="async"
+              fetchPriority="high"
               className="max-w-full max-h-full object-contain"
             />
           </div>
         </div>
         <div className="flex w-full absolute bottom-0">
           <a
-            href="./Resume.pdf" download
+            href="/Resume.pdf" download
             className="w-1/2 py-4 text-center text-xl text-white bg-gray-900 hover:bg-gray-800 transition duration-200"
           >
-            <i className="fas fa-download mr-2"></i>Resume
+            <Download className="mr-2 inline-block h-5 w-5" aria-hidden="true" />
+            Resume
           </a>
           <button
             onClick={handleHireMe}
             className="w-1/2 py-4 text-center text-xl text-gray-900 bg-red-500 hover:bg-red-600 transition duration-200"
           >
-            <i className="fas fa-hands-helping mr-2"></i>Hire Me
+            <Handshake className="mr-2 inline-block h-5 w-5" aria-hidden="true" />
+            Hire Me
           </button>
         </div>
       </div>
 
       {/* Tablet View */}
-      <div 
+      <div
         className="bg-white ml-20 mr-5 h-[350px] mt-10 relative hidden md:flex lg:hidden flex-col items-center justify-center"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -135,35 +157,37 @@ const Header = () => {
           </div>
           <div className="flex-shrink-0 self-end w-[180px] h-[250px] flex items-end justify-center">
             <img
-              src="/my-pic-white-background.png"
+              src="/my-pic-white-background.webp"
               alt="Washim Akram"
+              decoding="async"
               className="max-w-full max-h-full object-contain"
             />
           </div>
         </div>
         <div className="flex w-full absolute bottom-0">
           <a
-            href="./Resume.pdf" download
+            href="/Resume.pdf" download
             className="w-1/2 py-3 text-center text-lg text-white bg-gray-900 hover:bg-gray-800 transition duration-200"
           >
-            <i className="fas fa-download mr-2"></i>Resume
+            <Download className="mr-2 inline-block h-4 w-4" aria-hidden="true" />
+            Resume
           </a>
           <button
             onClick={handleHireMe}
             className="w-1/2 py-3 text-center text-lg text-gray-900 bg-red-500 hover:bg-red-600 transition duration-200"
           >
-            <i className="fas fa-hands-helping mr-2"></i>Hire Me
+            <Handshake className="mr-2 inline-block h-4 w-4" aria-hidden="true" />
+            Hire Me
           </button>
         </div>
       </div>
 
       {/* Mobile View */}
-      <div 
+      <div
         className="bg-white md:hidden mx-4 w-[calc(100%-2rem)] mt-[82px] relative"
         onTouchStart={() => setIsMobileMuteVisible(true)}
         onTouchEnd={() => setTimeout(() => setIsMobileMuteVisible(false), 3000)}
       >
-        {/* Added mute/unmute button for mobile */}
         <button
           onClick={toggleMute}
           className="absolute top-2 left-2 text-red-500 hover:text-gray-900 transition-opacity duration-300"
@@ -171,7 +195,7 @@ const Header = () => {
         >
           {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
         </button>
-        
+
         <div className="py-16 px-4">
           <p className="text-red-500 text-xl font-semibold mb-2">I'm</p>
           <h1 className="text-gray-900 text-4xl font-bold mb-2">
@@ -183,16 +207,18 @@ const Header = () => {
         </div>
         <div className="flex">
           <a
-            href="./Resume.pdf" download
+            href="/Resume.pdf" download
             className="flex-1 py-4 text-center text-lg text-white bg-gray-900 hover:bg-gray-800 transition duration-200"
           >
-            <i className="fas fa-download mr-2"></i>Resume
+            <Download className="mr-2 inline-block h-4 w-4" aria-hidden="true" />
+            Resume
           </a>
           <button
             onClick={handleHireMe}
             className="flex-1 py-4 text-center text-lg text-gray-900 bg-red-500 hover:bg-red-600 transition duration-200"
           >
-            <i className="fas fa-hands-helping mr-2"></i>Hire Me
+            <Handshake className="mr-2 inline-block h-4 w-4" aria-hidden="true" />
+            Hire Me
           </button>
         </div>
       </div>

@@ -25,7 +25,7 @@ const portfolioItems: Project[] = [
   {
     id: 1,
     category: 'web-des',
-    image: './portfolio-1.jpg',
+    image: '/portfolio-1.jpg',
     title: 'O2lenses',
     type: 'Web Design',
     link: 'https://www.o2lenses.com',
@@ -45,7 +45,7 @@ const portfolioItems: Project[] = [
   {
     id: 2,
     category: 'web-des',
-    image: './portfolio-2.jpg',
+    image: '/portfolio-2.jpg',
     title: 'Ldt Technology',
     type: 'Web Design',
     link: 'https://ldttechnology.com',
@@ -68,7 +68,7 @@ const portfolioItems: Project[] = [
   {
     id: 3,
     category: 'web-dev',
-    image: './portfolio-3.jpg',
+    image: '/portfolio-3.jpg',
     title: 'Mapmystudy',
     type: 'Web Development',
     link: 'https://www.mapmystudy.com',
@@ -91,7 +91,7 @@ const portfolioItems: Project[] = [
   {
     id: 4,
     category: 'web-dev',
-    image: './portfolio-4.jpg',
+    image: '/portfolio-4.jpg',
     title: 'Nadaku',
     type: 'Web Development',
     link: 'https://mycontents.id/category/nadaku',
@@ -114,7 +114,7 @@ const portfolioItems: Project[] = [
   {
     id: 5,
     category: 'dig-mar',
-    image: './portfolio-5.jpg',
+    image: '/portfolio-5.jpg',
     title: 'Acnosoft',
     type: 'Digital Marketing',
     link: 'https://www.acnosoft.com',
@@ -143,7 +143,7 @@ const portfolioItems: Project[] = [
   {
     id: 6,
     category: 'dig-mar',
-    image: './portfolio-6.jpg',
+    image: '/portfolio-6.jpg',
     title: 'Webpulse India',
     type: 'Digital Marketing',
     link: 'https://www.webpulseindia.com/',
@@ -166,7 +166,7 @@ const portfolioItems: Project[] = [
   {
     id: 7,
     category: 'personal-pro',
-    image: './portfolio-8.jpg',
+    image: '/portfolio-8.jpg',
     title: 'Riviewit',
     type: 'Personal Project',
     link: 'https://riviewit.com/',
@@ -345,6 +345,8 @@ const ProjectItem: React.FC<{ item: Project; index: number; openGallery: (index:
         <img
           src={item.image}
           alt={item.title}
+          loading="lazy"
+          decoding="async"
           onError={(event) => {
             event.currentTarget.src = '/review-1.jpg';
           }}
