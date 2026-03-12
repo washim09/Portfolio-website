@@ -8,6 +8,7 @@ interface FormData {
   email: string;
   subject: string;
   message: string;
+  website: string;
 }
 
 interface FormErrors {
@@ -29,13 +30,19 @@ const ContactMe: React.FC = () => {
     email: '',
     subject: '',
     message: '',
+    website: '',
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
+    if (submitStatus !== 'idle') {
+      setSubmitStatus('idle');
+      setSubmitMessage('');
+    }
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -60,22 +67,40 @@ const ContactMe: React.FC = () => {
     e.preventDefault();
     if (validateForm()) {
       setSubmitStatus('sending');
+      setSubmitMessage('');
       try {
-        const response = await fetch('https://formspree.io/f/mjkvoern', {
+        const response = await fetch('/contact.php', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
           body: JSON.stringify(formData),
         });
 
-        if (response.ok) {
+        const result = await response.json().catch(() => null) as { success?: boolean; message?: string } | null;
+
+        if (response.ok && result?.success) {
           setSubmitStatus('success');
-          setFormData({ name: '', email: '', subject: '', message: '' });
+          setSubmitMessage(result.message ?? 'Message sent successfully!');
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+            website: '',
+          });
         } else {
-          throw new Error('Failed to send message');
+          throw new Error(result?.message ?? 'Failed to send message');
         }
       } catch (error) {
         console.error('Error submitting form:', error);
         setSubmitStatus('error');
+        setSubmitMessage(
+          error instanceof Error
+            ? error.message
+            : 'Failed to send message. Please try again later.',
+        );
       }
     }
   };
@@ -97,6 +122,7 @@ const ContactMe: React.FC = () => {
               formData={formData}
               errors={errors}
               submitStatus={submitStatus}
+              submitMessage={submitMessage}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
             />
@@ -119,6 +145,7 @@ const ContactMe: React.FC = () => {
               formData={formData}
               errors={errors}
               submitStatus={submitStatus}
+              submitMessage={submitMessage}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
             />
@@ -141,6 +168,7 @@ const ContactMe: React.FC = () => {
               formData={formData}
               errors={errors}
               submitStatus={submitStatus}
+              submitMessage={submitMessage}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
             />
@@ -223,14 +251,25 @@ interface ContactFormProps {
   formData: FormData;
   errors: FormErrors;
   submitStatus: 'idle' | 'sending' | 'success' | 'error';
+  submitMessage: string;
   handleChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({
-  formData, errors, submitStatus, handleChange, handleSubmit,
+  formData, errors, submitStatus, submitMessage, handleChange, handleSubmit,
 }) => (
   <form onSubmit={handleSubmit}>
+    <input
+      type="text"
+      name="website"
+      value={formData.website}
+      onChange={handleChange}
+      autoComplete="off"
+      tabIndex={-1}
+      className="hidden"
+      aria-hidden="true"
+    />
     <div className="flex flex-col md:flex-row md:space-x-4 mb-4">
       <div className="w-full md:w-1/2 mb-4 md:mb-0">
         <input
@@ -293,8 +332,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
     >
       {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
     </button>
-    {submitStatus === 'success' && <p className="text-green-500 text-sm mt-2">Message sent successfully!</p>}
-    {submitStatus === 'error' && <p className="text-red-500 text-sm mt-2">Failed to send message. Please try again later.</p>}
+    {submitStatus === 'success' && <p className="text-green-500 text-sm mt-2">{submitMessage}</p>}
+    {submitStatus === 'error' && <p className="text-red-500 text-sm mt-2">{submitMessage}</p>}
   </form>
 );
 
