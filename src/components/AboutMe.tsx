@@ -43,16 +43,18 @@ const AboutMe = () => {
         
         <div className="flex">
           <div className="w-2/5 pr-8">
-            <video
-              src="/profile_animation_1.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              poster="/my-pic-white-background.webp"
-              className="w-80 h-80"
-            />
+            <div className="h-[360px] w-[280px] overflow-hidden">
+              <video
+                src="/profile_animation_1.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                poster="/my-pic-white-background.webp"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
           </div>
           <div className="w-3/5 mt-0">
             <div className="mb-6 space-y-4 text-sm leading-relaxed">
@@ -104,16 +106,18 @@ const AboutMe = () => {
         
         <div className="flex items-start gap-6">
           <div className="w-2/5">
-            <video
-              src="/profile_animation_1.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              poster="/my-pic-white-background.webp"
-              className="h-[320px] w-full max-w-[250px] object-cover"
-            />
+            <div className="h-[320px] w-full max-w-[250px] overflow-hidden">
+              <video
+                src="/profile_animation_1.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                poster="/my-pic-white-background.webp"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
           </div>
           <div className="w-3/5">
             <div className="mb-6 space-y-4 text-sm leading-7 text-[#333333]">
@@ -162,16 +166,18 @@ const AboutMe = () => {
           About Me
           <span className="absolute left-0 h-0.5 w-12 top-8 bg-[#FF6F61]"></span>
         </h2>
-        <video
-          src="/profile_animation_1.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          poster="/my-pic-white-background.webp"
-          className="w-80 h-80 ml-4"
-        />
+        <div className="mx-auto h-[320px] w-full max-w-[280px] overflow-hidden">
+          <video
+            src="/profile_animation_1.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster="/my-pic-white-background.webp"
+            className="h-full w-full object-cover object-top"
+          />
+        </div>
         <div className="mb-3 mt-3 space-y-4 text-sm leading-7 text-[#333333]">
           <p>
             Hi, I am Washim Akram - a Full-Stack Developer who builds complete, scalable web products from idea to deployment.
